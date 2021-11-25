@@ -14,8 +14,8 @@ const SCHOOL_TEASING_PROPOSITION = "Qu'est-ce que Corner peut apporter à mon ly
 
 function SchoolLandingPage() {
     return(
-        // <BackFrame value_proposition={SCHOOL_VALUE_PROPOSITION}/>
-        <ScrollingFrame teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
+        <BackFrame value_proposition={SCHOOL_VALUE_PROPOSITION}/>
+        // <ScrollingFrame teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
     );
 }
 
