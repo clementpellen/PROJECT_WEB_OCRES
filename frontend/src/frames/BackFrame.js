@@ -1,5 +1,8 @@
 import React from 'react';
 
+import '../reset.css';
+import './BackFrame.css';
+
 class BackFrame extends React.Component {
 
     constructor(props) {
@@ -9,10 +12,10 @@ class BackFrame extends React.Component {
 
     render() {
         return (
-            <div>
+            <main className='BackFrame'>
                 <h1 className='Corner'>Corner</h1>
                 <p className='value-proposition'>{this.props.value_proposition}</p>
-            </div>
+            </main>
         );
     }
 }
