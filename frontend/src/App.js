@@ -1,6 +1,6 @@
 import './App.css';
 
-import SchoolLandingPage from './schoollandingpage/SchoolLandingPage.js';
+import SchoolLandingPage from './landingpages/SchoolLandingPage.js';
 
 function App() {
   return (
