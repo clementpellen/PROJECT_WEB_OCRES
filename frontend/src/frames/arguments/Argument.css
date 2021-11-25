@@ -1,0 +1,24 @@
+.Argument {
+    width: 90%;
+    padding: 15rem 0 15rem 0;
+}
+
+.Argument .title {
+    margin-bottom: 10rem
+}
+
+.black-argument {
+    background-color: var(--dark);
+    color: var(--white);
+    border-radius: 15rem;
+}
+
+.SituationArgumentContent {
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    height: 100rem;
+    padding-top: 20rem;
+}
+
+.SituationArgumentContent p {
+    text-align: center;
+}

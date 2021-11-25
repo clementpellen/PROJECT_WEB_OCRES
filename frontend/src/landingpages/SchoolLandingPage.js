@@ -22,14 +22,14 @@ function SchoolLandingPage() {
     return(
         <div className='SchoolLandingPage'>
             
-            <BackFrame className='BackFrame' 
+            {/* <BackFrame className='BackFrame' 
                 backframe_id={SCHOOL_BACKFRAME} 
                 value_proposition={SCHOOL_VALUE_PROPOSITION} 
                 animation_id={SCHOOL_ANIMATION_ID}
-                animation={school_animation}/> 
+                animation={school_animation}/>  */}
             
             <div className='FrontFrame'>  
-                <div className='transparent-block'/> 
+                {/* <div className='transparent-block'/>  */}
                 <ScrollingFrame className='ScrollingFrame' teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
             </div>
 

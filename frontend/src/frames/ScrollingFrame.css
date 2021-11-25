@@ -17,3 +17,9 @@
     text-align: center;
     margin: 0 20% 0 20%;
 }
+
+.ScrollingFrame .divite-bar {
+    background-color: var(--grey);
+    height: 2em; width: 30%;
+    margin: 20em 0 20em 0;
+}
