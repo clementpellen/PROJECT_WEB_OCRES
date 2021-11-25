@@ -1,0 +1,11 @@
+.PartnerButton {
+    height: 3em; width: 60%;
+    background-color: var(--dark);
+    margin: 2em 0 2em 0;
+    border-radius: 60px;
+}
+
+.PartnerButton span {
+    font-size: 1rem;
+    color: var(--white);
+}

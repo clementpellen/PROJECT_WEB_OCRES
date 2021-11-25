@@ -1,29 +1,3 @@
-:root {
-    --blue: #2626AC;
-    --white: white;
-}
-
-/* TODO::
-- linear gradient
-- responsive 
-*/
-
-/* @media screen and (max-device-width:450px) {} */
-
-html {
-    height: 100%;
-}
-
-body {
-    height: 100%;
-	font-family: 'Comfortaa', cursive;
-    font-size: 16px;
-}
-
-#root {
-    height: 100%;
-}
-
 .BackFrame {
     background-color: var(--blue);
     height: 100%;

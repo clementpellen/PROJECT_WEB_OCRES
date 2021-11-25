@@ -1,6 +1,9 @@
 import React from 'react';
 
+import PartnerButton from '../buttons/PartnerButton.js';
+
 import '../reset.css';
+import './ScrollingFrame.css';
 
 class ScrollingFrame extends React.Component {
 
@@ -10,7 +13,11 @@ class ScrollingFrame extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <main className='ScrollingFrame'>
+                <div className='scroll-bar'></div>
+                <PartnerButton />
+                <p className='teaser-proposition'>{this.props.teaser_proposition}</p>
+            </main>
         );
     }
 }
