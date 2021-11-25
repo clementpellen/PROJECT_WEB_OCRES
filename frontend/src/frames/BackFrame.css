@@ -1,7 +1,15 @@
 .BackFrame {
-    background-color: var(--blue);
     height: 100%;
     padding: 2.5em 0 0 0;
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: center;
+}
+
+#child-backframe, #school-backframe {
+    background-color: var(--blue);
+}
+
+#parent-backframe {
+    background-color: var(--blue-light);
 }
 
 .BackFrame .Corner {
@@ -18,4 +26,18 @@
     text-align: center;
     margin: 0 0.2em 0 0.2em;
     color: var(--white);
+}
+
+.BackFrame #child-animation-id {
+    box-sizing: border-box; width: 110%;
+    margin-top: 3em;
+}
+
+.BackFrame #parent-animation-id {
+    box-sizing: border-box; width: 130%;
+}
+
+.BackFrame #school-animation-id {
+    box-sizing: border-box; width: 100%;
+    margin-top: 10em;
 }

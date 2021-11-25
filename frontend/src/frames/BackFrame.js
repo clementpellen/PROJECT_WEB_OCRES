@@ -3,8 +3,6 @@ import React from 'react';
 import '../reset.css';
 import './BackFrame.css';
 
-import parent_animation from '../img/gif/parent_animation.gif';
-
 class BackFrame extends React.Component {
 
     constructor(props) {
@@ -14,10 +12,10 @@ class BackFrame extends React.Component {
 
     render() {
         return (
-            <main className='BackFrame'>
+            <main id={this.props.backframe_id} className='BackFrame'>
                 <h1 className='Corner'>Corner</h1>
                 <p className='value-proposition'>{this.props.value_proposition}</p>
-                <img src={parent_animation} />
+                <img id={this.props.animation_id} className='animation' src={this.props.animation} />
             </main>
         );
     }
