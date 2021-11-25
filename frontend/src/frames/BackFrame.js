@@ -14,7 +14,7 @@ class BackFrame extends React.Component {
         return (
             <main id={this.props.backframe_id} className='BackFrame'>
                 <h1 className='Corner'>Corner</h1>
-                <p className='value-proposition'>{this.props.value_proposition}</p>
+                <h4 className='value-proposition'>{this.props.value_proposition}</h4>
                 <img id={this.props.animation_id} className='animation' src={this.props.animation} />
             </main>
         );

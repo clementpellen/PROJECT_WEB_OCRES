@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Raleway:wght@800&display=swap%27');
+
 :root {
     /* Colors: */
     --blue: #3C587F;
@@ -19,15 +21,59 @@
 
 html {
     height: 100%;
+    font-size: 1px;
 }
 
 body {
     background-color: red;
     height: 100%;
     font-family: 'Comfortaa', cursive;
-    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
 }
 
 #root {
     height: 100%;
+}
+
+
+h1 {
+    font-size: 70rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 30rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 20rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 20rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 18rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 14rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+}
+
+p {
+    font-size: 14rem;
+    font-family: 'Comfortaa', cursive;
+    font-weight: normal;
 }

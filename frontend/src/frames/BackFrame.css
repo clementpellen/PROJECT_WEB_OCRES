@@ -13,16 +13,12 @@
 }
 
 .BackFrame .Corner {
-    font-size: 4rem;
-    font-family: "Raleway";
-    font-weight: bold;
     text-align: center;
     margin-bottom: 0.5em;
     color: var(--white);
 }
 
 .BackFrame .value-proposition {
-    font-size: 1.2rem;
     text-align: center;
     margin: 0 0.2em 0 0.2em;
     color: var(--white);
@@ -39,5 +35,5 @@
 
 .BackFrame #school-animation-id {
     box-sizing: border-box; width: 100%;
-    margin-top: 10em;
+    margin-top: 150em;
 }
