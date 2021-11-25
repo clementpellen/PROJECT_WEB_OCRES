@@ -1,6 +1,8 @@
 import BackFrame from '../frames/BackFrame.js';
 import ScrollingFrame from '../frames/ScrollingFrame.js';
 
+import './LandingPage.css';
+
 import parent_animation from '../img/gif/parent_animation.gif';
 
 /* Page des différents segments clients */
@@ -18,12 +20,20 @@ const PARENT_TEASING_PROPOSITION = "Pourquoi Corner est le club des lycéens ? �
 
 function ParentLandingPage() {
     return(
-        <BackFrame 
-            backframe_id={PARENT_BACKFRAME} 
-            value_proposition={PARENT_VALUE_PROPOSITION} 
-            animation_id={PARENT_ANIMATION_ID}
-            animation={parent_animation}/>
-        // <ScrollingFrame teaser_proposition={PARENT_TEASING_PROPOSITION}/>
+        <div className='ParentLandingPage'>
+            
+            <BackFrame className='BackFrame' 
+                backframe_id={PARENT_BACKFRAME} 
+                value_proposition={PARENT_VALUE_PROPOSITION} 
+                animation_id={PARENT_ANIMATION_ID}
+                animation={parent_animation}/>
+            
+            <div className='FrontFrame'>  
+                <div className='transparent-block'></div>  
+                <ScrollingFrame className='ScrollingFrame' teaser_proposition={PARENT_TEASING_PROPOSITION}/>            
+            </div>
+
+        </div>
     );
 }
 

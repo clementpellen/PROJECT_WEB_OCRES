@@ -1,6 +1,8 @@
 import BackFrame from '../frames/BackFrame.js';
 import ScrollingFrame from '../frames/ScrollingFrame.js';
 
+import './LandingPage.css';
+
 import child_animation from '../img/gif/child_animation.gif';
 
 /* Page des différents segments clients */
@@ -18,12 +20,20 @@ const CHILD_TEASING_PROPOSITION = "Comment transformer ton école en stade Corne
 
 function ChildLandingPage() {
     return(
-        <BackFrame 
-            backframe_id={CHILD_BACKFRAME} 
-            value_proposition={CHILD_VALUE_PROPOSITION} 
-            animation_id={CHILD_ANIMATION_ID}
-            animation={child_animation}/>
-        // <ScrollingFrame teaser_proposition={CHILD_TEASING_PROPOSITION}/>
+        <div className='ChildLandingPage'>
+
+            <BackFrame 
+                backframe_id={CHILD_BACKFRAME} 
+                value_proposition={CHILD_VALUE_PROPOSITION} 
+                animation_id={CHILD_ANIMATION_ID}
+                animation={child_animation}/>
+
+            <div className='FrontFrame'>  
+                <div className='transparent-block'/> 
+                <ScrollingFrame className='ScrollingFrame' teaser_proposition={CHILD_TEASING_PROPOSITION}/>
+            </div>
+
+        </div>
     );
 }
 
