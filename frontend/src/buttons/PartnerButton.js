@@ -11,7 +11,7 @@ class PartnerButton extends React.Component {
 
     render() {
         return(
-            <button className="PartnerButton" onClick=''>
+            <button className="PartnerButton" /*onClick=''*/>
                 <h3>Devenir Partenaire</h3>
             </button>
         );
