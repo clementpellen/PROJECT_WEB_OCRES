@@ -1,4 +1,4 @@
-/* TODO: LANCER L'INCREMENTATION QUAND ON SCROLL / GERER L'ERREUR SI TOUTES LES PROPS FOLLOWERS SONT UNDEFINED / METTRE à un nombre minimum */
+/* TODO: LANCER L'INCREMENTATION QUAND ON SCROLL / METTRE à un nombre minimum */
 
 import React from 'react';
 
@@ -34,10 +34,14 @@ class FollowersWidget extends React.Component {
         }
     }
 
+    determineIntervalTime() {
+        return(3000 / this.nb_followers_total);
+    }
+
     componentDidMount() {
         setInterval(() => {
             this.tick();
-        }, 80);
+        }, this.determineIntervalTime());
     }
 
     componentWillUnmount() {

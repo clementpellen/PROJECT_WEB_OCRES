@@ -6,9 +6,9 @@ import SchoolLandingPage from './landingpages/SchoolLandingPage.js';
 
 function App() {
   return (
-    <ChildLandingPage />
+    // <ChildLandingPage />
     // <ParentLandingPage />
-    // <SchoolLandingPage />
+    <SchoolLandingPage />
   );
 }
 

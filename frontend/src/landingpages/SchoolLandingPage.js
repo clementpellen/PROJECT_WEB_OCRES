@@ -39,7 +39,7 @@ function SchoolLandingPage() {
             <div className='FrontFrame'>  
                 <div className='transparent-block'/> 
                 
-                <ScrollingFrame className='ScrollingFrame' 
+                <ScrollingFrame
                     cta={SCHOOL_CTA} 
                     teaser_proposition={SCHOOL_TEASING_PROPOSITION} 
                     nb_school_followers={NB_SCHOOL_FOLLOWERS_TOTAL} 
