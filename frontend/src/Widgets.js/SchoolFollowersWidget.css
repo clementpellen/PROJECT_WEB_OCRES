@@ -1,0 +1,12 @@
+.SchoolFollowersWidget {
+    border: solid var(--grey) 1px;
+    border-radius: 15rem;
+    box-sizing: border-box; height: 210rem; width:300rem;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+}
+
+.SchoolFollowersWidget h5 {
+    text-align: center; 
+    width: 200rem;
+}
+

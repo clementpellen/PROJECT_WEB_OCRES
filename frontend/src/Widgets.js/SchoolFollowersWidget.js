@@ -1,22 +1,26 @@
 import React from 'react';
 
+import './SchoolFollowersWidget.css';
+
 const NB_SCHOOL_FOLLOWERS_TOTAL = 18;
 
 class SchoolFollowersWidget extends React.Component {
+
+    _isMounted = false;
 
     constructor(props) {
         super(props);
         this.state = {nb_school_followers : 0}
     }
 
-    increase_nbschoolfollowers() {
-        this.componentDidiMount();
-    }
-
-    componentDidiMount() {
+    componentDidMount() {
         setInterval(() => {
             this.tick();
-        }, 1000);
+        }, 80);
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
     
     tick() {
@@ -25,10 +29,21 @@ class SchoolFollowersWidget extends React.Component {
         });
     }
 
+    displayNbSchoolFollowers() {
+        if(this.state.nb_school_followers < NB_SCHOOL_FOLLOWERS_TOTAL) {
+            return this.state.nb_school_followers;
+        }
+        else {
+            return NB_SCHOOL_FOLLOWERS_TOTAL;
+        }
+    }
+
     render() {
-        this.increase_nbschoolfollowers();
         return(
-            <h1>{this.state.nb_school_followers}</h1>
+            <div className='SchoolFollowersWidget'>
+                <h1>{this.displayNbSchoolFollowers()}</h1>
+                <h5>lycées nous font déjà confiances</h5>
+            </div>
         );
     }
 
