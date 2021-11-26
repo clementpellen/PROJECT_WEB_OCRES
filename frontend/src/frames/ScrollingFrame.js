@@ -32,9 +32,27 @@ class ScrollingFrame extends React.Component {
                 <PartnerButton cta={this.props.cta}/>
                 <p className='teaser-proposition'>{this.props.teaser_proposition}</p>
                 <div className='divite-bar'/>
-                <Argument argument={SITUATION_ARGUMENT} title={SITUATION_ARGUMENT_TITLE} color={WHITE_ARGUMENT} cta={this.props.cta}/>
-                <Argument argument={PROBLEM_ARGUMENT} title={PROBLEM_ARGUMENT_TITLE} color={BLACK_ARGUMENT} cta={this.props.cta}/>
-                <Argument argument={CONFIDENCE_ARGUMENT} title={CONFIDENCE_ARGUMENT_TITLE} color={WHITE_ARGUMENT} cta={this.props.cta}/>
+                
+                <Argument 
+                    argument={SITUATION_ARGUMENT} 
+                    title={SITUATION_ARGUMENT_TITLE} 
+                    color={WHITE_ARGUMENT}/>
+
+                <Argument 
+                    argument={PROBLEM_ARGUMENT} 
+                    title={PROBLEM_ARGUMENT_TITLE} 
+                    color={BLACK_ARGUMENT}/>
+
+                <Argument 
+                    argument={CONFIDENCE_ARGUMENT} 
+                    title={CONFIDENCE_ARGUMENT_TITLE} 
+                    color={WHITE_ARGUMENT} 
+                    nb_teams_on_appli={this.props.nb_teams_on_appli} 
+                    nb_parent_followers={this.props.nb_parent_followers} 
+                    nb_school_followers={this.props.nb_school_followers} 
+                    description_widget={this.props.description_widget} 
+                    cta={this.props.cta}/>
+
             </main>
         );
     }

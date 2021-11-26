@@ -20,6 +20,11 @@ const SCHOOL_CTA = "Devenir Partenaire";
 /* Phrases d'accroche des différents segments clients */
 const SCHOOL_TEASING_PROPOSITION = "Qu'est-ce que Corner peut apporter à mon lycée ? 👇";
 
+/* Widget des différents segments clients */
+const NB_SCHOOL_FOLLOWERS_TOTAL = 18;
+
+/* Description du Widget des différents segments clients */
+const SCHOOL_DESCRIPTION_WIDGET = "lycées nous font déjà confiance";
 
 function SchoolLandingPage() {
     return(
@@ -33,7 +38,13 @@ function SchoolLandingPage() {
             
             <div className='FrontFrame'>  
                 <div className='transparent-block'/> 
-                <ScrollingFrame className='ScrollingFrame' cta={SCHOOL_CTA} teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
+                
+                <ScrollingFrame className='ScrollingFrame' 
+                    cta={SCHOOL_CTA} 
+                    teaser_proposition={SCHOOL_TEASING_PROPOSITION} 
+                    nb_school_followers={NB_SCHOOL_FOLLOWERS_TOTAL} 
+                    description_widget={SCHOOL_DESCRIPTION_WIDGET}/>
+
             </div>
 
         </div>

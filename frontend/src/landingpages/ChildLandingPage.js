@@ -20,6 +20,12 @@ const CHILD_CTA = "Nous Suivre";
 /* Phrases d'accroche des différents segments clients */
 const CHILD_TEASING_PROPOSITION = "Comment transformer ton école en stade Corner ? 👇";
 
+/* Widget des différents segments clients */
+const NB_TEAMS_ON_APPLI_TOTAL = 53;
+
+/* Description du Widget des différents segments clients */
+const CHILD_DESCRIPTION_WIDGET = "équipes sont déjà sur l'appli";
+
 
 function ChildLandingPage() {
     return(
@@ -33,7 +39,11 @@ function ChildLandingPage() {
 
             <div className='FrontFrame'>  
                 <div className='transparent-block'/> 
-                <ScrollingFrame className='ScrollingFrame' cta={CHILD_CTA} teaser_proposition={CHILD_TEASING_PROPOSITION}/>
+                <ScrollingFrame className='ScrollingFrame' 
+                    cta={CHILD_CTA} 
+                    teaser_proposition={CHILD_TEASING_PROPOSITION} 
+                    nb_teams_on_appli={NB_TEAMS_ON_APPLI_TOTAL} 
+                    description_widget={CHILD_DESCRIPTION_WIDGET}/>
             </div>
 
         </div>
