@@ -8,10 +8,12 @@ import './ScrollingFrame.css';
 
 /* Parties du ScrollingFrame */
 const SITUATION_ARGUMENT = 'situation';
+const PROBLEM_ARGUMENT = 'problem';
 const CONFIDENCE_ARGUMENT = 'confidence';
 
 /* Titres des parties du ScrollingFrame */
 const SITUATION_ARGUMENT_TITLE = "⚽ Le Sport et les Jeunes";
+const PROBLEM_ARGUMENT_TITLE = "❓ Problème";
 const CONFIDENCE_ARGUMENT_TITLE = "🏫 Ils nous font confiance";
 
 const WHITE_ARGUMENT = 'white-argument';
@@ -31,6 +33,7 @@ class ScrollingFrame extends React.Component {
                 <p className='teaser-proposition'>{this.props.teaser_proposition}</p>
                 <div className='divite-bar'/>
                 <Argument argument={SITUATION_ARGUMENT} title={SITUATION_ARGUMENT_TITLE} color={WHITE_ARGUMENT}/>
+                <Argument argument={PROBLEM_ARGUMENT} title={PROBLEM_ARGUMENT_TITLE} color={BLACK_ARGUMENT}/>
                 <Argument argument={CONFIDENCE_ARGUMENT} title={CONFIDENCE_ARGUMENT_TITLE} color={WHITE_ARGUMENT}/>
             </main>
         );

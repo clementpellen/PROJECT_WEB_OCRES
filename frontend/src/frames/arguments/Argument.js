@@ -3,6 +3,8 @@
 import React from 'react';
 
 import SituationArgumentContent from './SituationArgumentContent.js';
+import ProblemArgumentContent from './ProblemArgumentContent.js';
+
 import SchoolFollowersWidget from '../../Widgets.js/SchoolFollowersWidget.js';
 import PartnerButton from '../../buttons/PartnerButton.js';
 
@@ -19,6 +21,11 @@ class Argument extends React.Component {
             case 'situation':
                 return(
                     <SituationArgumentContent />
+                );
+
+            case 'problem':
+                return(
+                    <ProblemArgumentContent />
                 );
             
             case 'confidence':

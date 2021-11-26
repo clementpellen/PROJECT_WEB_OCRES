@@ -1,6 +1,7 @@
 .Argument {
     width: 90%;
-    padding: 15rem 0 15rem 0;
+    padding: 15rem 0 5rem 0;
+    margin-top: 20rem;
 }
 
 .Argument .title {
@@ -11,6 +12,8 @@
     background-color: var(--dark);
     color: var(--white);
     border-radius: 15rem;
+    width: 88%;
+    padding: 15rem 10rem 5rem 10rem;
 }
 
 .SituationArgumentContent {
@@ -27,4 +30,27 @@
     display: flex; flex-direction: column; justify-content: space-between; align-items: center;
     height: 300rem;
     margin-top: 30rem;
+}
+
+.ProblemArgumentContent {
+    box-sizing: border-box; height: 200rem;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;
+}
+
+.ProblemArgumentContent ul {
+    list-style-type: disc;
+    font-size: 18rem;
+    font-weight: normal;
+    font-family: 'Comfortaa', cursive;
+    margin-left: 60rem;
+    margin-top: 10rem;
+}
+
+.ProblemArgumentContent h5 {
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    margin: 0 10rem 0 10rem;
+    padding: 5rem 10rem 5rem 10rem;
+    border-radius: 5rem;
 }

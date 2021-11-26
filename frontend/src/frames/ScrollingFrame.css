@@ -9,7 +9,7 @@
 .ScrollingFrame .scroll-bar {
     background-color: var(--black);
     height: 4rem; width: 30%;
-    border-radius: 10px;
+    border-radius: 10rem;
 }
 
 .ScrollingFrame .teaser-proposition {
@@ -19,6 +19,6 @@
 
 .ScrollingFrame .divite-bar {
     background-color: var(--grey);
-    height: 2rem; width: 30%;
-    margin: 20rem 0 20rem 0;
+    height: 2rem; width: 250rem;
+    margin: 30rem 0 0 0;
 }
