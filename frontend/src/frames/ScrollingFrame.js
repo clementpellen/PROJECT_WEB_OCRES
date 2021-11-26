@@ -30,7 +30,7 @@ class ScrollingFrame extends React.Component {
                 <PartnerButton />
                 <p className='teaser-proposition'>{this.props.teaser_proposition}</p>
                 <div className='divite-bar'/>
-                <Argument argument={SITUATION_ARGUMENT} title={SITUATION_ARGUMENT_TITLE} color={BLACK_ARGUMENT}/>
+                <Argument argument={CONFIDENCE_ARGUMENT} title={CONFIDENCE_ARGUMENT_TITLE} color={WHITE_ARGUMENT}/>
             </main>
         );
     }

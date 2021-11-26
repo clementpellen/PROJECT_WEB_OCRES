@@ -1,8 +1,9 @@
-// TODO: FAIRE BlackArgument
+// TODO: Ameliorer BlackArgument / Emoji en blanc
 
 import React from 'react';
 
 import SituationArgumentContent from './SituationArgumentContent.js';
+import SchoolFollowersWidget from '../../Widgets.js/SchoolFollowersWidget.js';
 
 import './Argument.css';
 
@@ -21,7 +22,7 @@ class Argument extends React.Component {
             
             case 'confidence':
                 return(
-                    <h2>COUCOU</h2>
+                    <SchoolFollowersWidget />
                 );
         
             default:
