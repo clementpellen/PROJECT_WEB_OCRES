@@ -4,6 +4,7 @@ import React from 'react';
 
 import SituationArgumentContent from './SituationArgumentContent.js';
 import SchoolFollowersWidget from '../../Widgets.js/SchoolFollowersWidget.js';
+import PartnerButton from '../../buttons/PartnerButton.js';
 
 import './Argument.css';
 
@@ -22,7 +23,10 @@ class Argument extends React.Component {
             
             case 'confidence':
                 return(
-                    <SchoolFollowersWidget />
+                    <div className='ConfidenceArgumentContent'>
+                        <SchoolFollowersWidget />
+                        <PartnerButton />
+                    </div>
                 );
         
             default:

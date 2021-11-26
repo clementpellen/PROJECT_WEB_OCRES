@@ -1,7 +1,7 @@
 .PartnerButton {
-    height: 47em; width: 245em;
+    box-sizing: border-box; height: 47rem; width: 245rem;
     background-color: var(--dark);
-    margin: 25em 0 25em 0;
+    margin: 25rem 0 25rem 0;
     border-radius: 60px;
 }
 

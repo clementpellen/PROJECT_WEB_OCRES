@@ -22,3 +22,9 @@
 .SituationArgumentContent p {
     text-align: center;
 }
+
+.ConfidenceArgumentContent {
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+    height: 300rem;
+    margin-top: 30rem;
+}
