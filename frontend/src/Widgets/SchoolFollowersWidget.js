@@ -1,3 +1,5 @@
+/* TODO: LANCER L'INCREMENTATION QUAND ON SCROLL */
+
 import React from 'react';
 
 import './SchoolFollowersWidget.css';
@@ -42,7 +44,7 @@ class SchoolFollowersWidget extends React.Component {
         return(
             <div className='SchoolFollowersWidget'>
                 <h1>{this.displayNbSchoolFollowers()}</h1>
-                <h5>lycées nous font déjà confiances</h5>
+                <h5>lycées nous font déjà confiance</h5>
             </div>
         );
     }

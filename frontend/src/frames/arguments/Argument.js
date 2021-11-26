@@ -5,7 +5,7 @@ import React from 'react';
 import SituationArgumentContent from './SituationArgumentContent.js';
 import ProblemArgumentContent from './ProblemArgumentContent.js';
 
-import SchoolFollowersWidget from '../../Widgets.js/SchoolFollowersWidget.js';
+import SchoolFollowersWidget from '../../Widgets/SchoolFollowersWidget.js';
 import PartnerButton from '../../buttons/PartnerButton.js';
 
 import './Argument.css';
