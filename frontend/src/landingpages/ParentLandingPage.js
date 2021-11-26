@@ -14,6 +14,9 @@ const PARENT_VALUE_PROPOSITION = "Le club pour jouer quand on veut, avec qui on 
 /* Animation des différents segments clients */
 const PARENT_ANIMATION_ID = "parent-animation-id";
 
+/* Call To Action des différents segments clients */
+const PARENT_CTA = "Se préinscrire";
+
 /* Phrases d'accroche des différents segments clients */
 const PARENT_TEASING_PROPOSITION = "Pourquoi Corner est le club des lycéens ? 👇";
 
@@ -30,7 +33,7 @@ function ParentLandingPage() {
             
             <div className='FrontFrame'>  
                 <div className='transparent-block'></div>  
-                <ScrollingFrame className='ScrollingFrame' teaser_proposition={PARENT_TEASING_PROPOSITION}/>            
+                <ScrollingFrame className='ScrollingFrame' cta={PARENT_CTA} teaser_proposition={PARENT_TEASING_PROPOSITION}/>            
             </div>
 
         </div>

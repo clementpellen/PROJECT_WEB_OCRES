@@ -14,6 +14,9 @@ const SCHOOL_VALUE_PROPOSITION = "Il n'a jamais été aussi simple d'organiser u
 /* Animation des différents segments clients */
 const SCHOOL_ANIMATION_ID = "school-animation-id";
 
+/* Call To Action des différents segments clients */
+const SCHOOL_CTA = "Devenir Partenaire";
+
 /* Phrases d'accroche des différents segments clients */
 const SCHOOL_TEASING_PROPOSITION = "Qu'est-ce que Corner peut apporter à mon lycée ? 👇";
 
@@ -26,11 +29,11 @@ function SchoolLandingPage() {
                 backframe_id={SCHOOL_BACKFRAME} 
                 value_proposition={SCHOOL_VALUE_PROPOSITION} 
                 animation_id={SCHOOL_ANIMATION_ID}
-                animation={school_animation}/> 
+                animation={school_animation} /> 
             
             <div className='FrontFrame'>  
                 <div className='transparent-block'/> 
-                <ScrollingFrame className='ScrollingFrame' teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
+                <ScrollingFrame className='ScrollingFrame' cta={SCHOOL_CTA} teaser_proposition={SCHOOL_TEASING_PROPOSITION}/>
             </div>
 
         </div>

@@ -12,7 +12,7 @@ class PartnerButton extends React.Component {
     render() {
         return(
             <button className="PartnerButton" /*onClick=''*/>
-                <h3>Devenir Partenaire</h3>
+                <h3>{this.props.cta}</h3>
             </button>
         );
     }

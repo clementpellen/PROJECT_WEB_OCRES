@@ -32,7 +32,7 @@ class Argument extends React.Component {
                 return(
                     <div className='ConfidenceArgumentContent'>
                         <SchoolFollowersWidget />
-                        <PartnerButton />
+                        <PartnerButton cta={this.props.cta}/>
                     </div>
                 );
         
