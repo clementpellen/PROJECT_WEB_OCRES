@@ -1,4 +1,4 @@
-/* TODO: LANCER L'INCREMENTATION QUAND ON SCROLL / METTRE à un nombre minimum */
+/* TODO: METTRE à un nombre minimum */
 
 import React from 'react';
 
@@ -7,6 +7,8 @@ import './FollowersWidget.css';
 // const NB_SCHOOL_FOLLOWERS_TOTAL = 18;
 
 // const NB_FOLLOWERS_TOTAL = 3;
+
+const WINDOW_SCROLL_MIN = 730;
 
 class FollowersWidget extends React.Component {
 
@@ -17,6 +19,17 @@ class FollowersWidget extends React.Component {
     constructor(props) {
         super(props);
         this.state = {nb_followers : 0}
+    }
+
+    checkWindowScroll() {
+        if(window.scrollY > WINDOW_SCROLL_MIN)
+            return true;
+        else 
+            return false;
+    }
+
+    determineIntervalTime() {
+        return(3000 / this.nb_followers_total);
     }
 
     determineNbFollowers() {
@@ -34,13 +47,11 @@ class FollowersWidget extends React.Component {
         }
     }
 
-    determineIntervalTime() {
-        return(3000 / this.nb_followers_total);
-    }
 
     componentDidMount() {
         setInterval(() => {
-            this.tick();
+            if(this.checkWindowScroll())
+                this.tick();
         }, this.determineIntervalTime());
     }
 
@@ -54,7 +65,7 @@ class FollowersWidget extends React.Component {
         });
     }
 
-    displayNbFollowers() {
+    displayNbFollowers() {              
         if(this.state.nb_followers < this.nb_followers_total) {
             return this.state.nb_followers;
         }
