@@ -8,6 +8,8 @@ import './FollowersWidget.css';
 
 // const NB_FOLLOWERS_TOTAL = 3;
 
+const WINDOW_SCROLL_MIN = 730;
+
 class FollowersWidget extends React.Component {
 
     _isMounted = false;
@@ -19,24 +21,37 @@ class FollowersWidget extends React.Component {
         this.state = {nb_followers : 0}
     }
 
+    checkWindowScroll() {
+        if(window.scrollY > WINDOW_SCROLL_MIN) {
+            console.log('true');
+            return true;
+        }
+        else { 
+            console.log('false');
+            return false;
+        }
+    }
+
     determineNbFollowers() {
-        if(this.props.nb_teams_on_appli !== undefined) {
-            this.nb_followers_total = this.props.nb_teams_on_appli;
-        }
-        else if(this.props.nb_parent_followers !== undefined) {
-            this.nb_followers_total = this.props.nb_parent_followers;
-        }
-        else if(this.props.nb_school_followers !== undefined) {
-            this.nb_followers_total = this.props.nb_school_followers;
-        }
-        else {
-            console.log("ERROR : No Value For Widget");
-        }
+            if(this.props.nb_teams_on_appli !== undefined) {
+                this.nb_followers_total = this.props.nb_teams_on_appli;
+            }
+            else if(this.props.nb_parent_followers !== undefined) {
+                this.nb_followers_total = this.props.nb_parent_followers;
+            }
+            else if(this.props.nb_school_followers !== undefined) {
+                this.nb_followers_total = this.props.nb_school_followers;
+            }
+            else {
+                console.log("ERROR : No Value For Widget");
+            }
     }
 
     componentDidMount() {
         setInterval(() => {
-            this.tick();
+            if(this.checkWindowScroll())
+                this.tick();
+
         }, 80);
     }
 
@@ -50,7 +65,7 @@ class FollowersWidget extends React.Component {
         });
     }
 
-    displayNbFollowers() {
+    displayNbFollowers() {              
         if(this.state.nb_followers < this.nb_followers_total) {
             return this.state.nb_followers;
         }
