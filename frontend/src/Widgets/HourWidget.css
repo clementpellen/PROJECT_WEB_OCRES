@@ -1,0 +1,9 @@
+.HourWidget {
+    width: 60px; height: 82px;
+    border-radius: 15px;
+}
+
+.free_hour {
+    border: solid var(--grey) 1px;
+    color: var(--grey);
+}
