@@ -22,3 +22,11 @@
     height: 2rem; width: 250rem;
     margin: 30rem 0 0 0;
 }
+
+
+/*********** MAP *************/
+
+.MapScrollingFrame {
+    height: 300rem;
+}
+

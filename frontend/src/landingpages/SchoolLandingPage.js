@@ -1,7 +1,7 @@
 import BackFrame from '../frames/BackFrame.js';
 import ScrollingFrame from '../frames/ScrollingFrame.js';
 
-import './LandingPage.css';
+import '../Parallax.css';
 
 import school_animation from '../img/gif/school_animation.gif';
 
