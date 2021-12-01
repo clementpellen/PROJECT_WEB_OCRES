@@ -5,11 +5,21 @@
     --blue: #3C587F;
     --blue-light: #97C0D9;
 
-    --white: white;
-    --black: black;
+    --main-light: #00FF8B;
+    --main: #0BEB82;
+    --main-dark: #29CC7F;
+
+    --accent-light: #FF4233;
+    --accent: #F22818;
+    --accent-dark: #E52212;
+
+    --white: #FCFCFF;
+    --light: #E6E6EB;
+    --shadow: #D4D4DB;
 
     --dark: #353540;
-    --grey: #C4C4C4;
+    --black: #212126;
+    --border: #0B0B0D;
 
 }
 
