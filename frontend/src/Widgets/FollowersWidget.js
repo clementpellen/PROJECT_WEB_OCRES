@@ -47,6 +47,15 @@ class FollowersWidget extends React.Component {
         }
     }
 
+    // callAPI() {
+    //     fetch("http://localhost:3000/testAPI")
+    //         .then(res => res.text())
+    //         .then(res => this.setState({ apiResponse: res }));
+    // }
+
+    // componentWillMount() {
+    //     this.callAPI();
+    // }
 
     componentDidMount() {
         setInterval(() => {
