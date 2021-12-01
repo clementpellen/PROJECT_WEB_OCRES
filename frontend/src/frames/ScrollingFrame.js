@@ -23,20 +23,7 @@ class ScrollingFrame extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = {scroll_top : 0}
     }
-
-    // componentDidMount() {
-    //     setInterval(() => {
-    //         this.checkScrollTop();
-    //     }, 500);
-    // }
-
-    // checkScrollTop() {
-    //     console.log((document.getElementsByClassName('ScrollingFrame')[0]).scrollTop);
-    // }
-
-    // (document.getElementsByClassName('ScrollingFrame')[0]).scrollTop
 
     render() {
         return (

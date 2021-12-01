@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
-
-import ScrollingFrame from './frames/ScrollingFrame.js';
+import MapFrontFrame from './frames/MapFrontFrame.js'
 
 import './Parallax.css';
 
@@ -27,15 +26,8 @@ export class MapContainer extends Component {
                     }
                 />
 
-                <div className='FrontFrame'>  
-                    
-                    <ScrollingFrame
-                        cta={"SCHOOL_CTA"} 
-                        teaser_proposition={"SCHOOL_TEASING_PROPOSITION"} 
-                        nb_school_followers={"NB_SCHOOL_FOLLOWERS_TOTAL"} 
-                        description_widget={"SCHOOL_DESCRIPTION_WIDGET"}/>
+                <MapFrontFrame />  
 
-                </div>
             </div>
         );
     }
