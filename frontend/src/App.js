@@ -3,7 +3,7 @@ import './App.css';
 import ChildLandingPage from './landingpages/ChildLandingPage.js';
 import ParentLandingPage from './landingpages/ParentLandingPage.js';
 import SchoolLandingPage from './landingpages/SchoolLandingPage.js';
-import CallApi from './CallApiExemplePourClementine.js';
+import CallApi from './CallApiExemplePourStani.js';
 import Map from './Map.js';
 
 import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
