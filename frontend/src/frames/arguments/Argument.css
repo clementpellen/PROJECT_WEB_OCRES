@@ -14,6 +14,7 @@
     border-radius: 15rem;
     width: 88%;
     padding: 15rem 10rem 5rem 10rem;
+    box-shadow: inset -100px -350px 250px -250px var(--blue);
 }
 
 .SituationArgumentContent {

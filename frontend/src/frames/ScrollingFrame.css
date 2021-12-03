@@ -18,7 +18,7 @@
 }
 
 .ScrollingFrame .divite-bar {
-    background-color: var(--grey);
+    background-color: var(--shadow);
     height: 2rem; width: 250rem;
     margin: 30rem 0 0 0;
 }

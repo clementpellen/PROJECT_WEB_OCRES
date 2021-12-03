@@ -18,7 +18,7 @@ class FollowersWidget extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {nb_followers : 0}
+        this.state = {nb_followers : 0, apiResponse: ""}
     }
 
     checkWindowScroll() {
@@ -34,7 +34,9 @@ class FollowersWidget extends React.Component {
 
     determineNbFollowers() {
         if(this.props.nb_teams_on_appli !== undefined) {
-            this.nb_followers_total = this.props.nb_teams_on_appli;
+            this.nb_followers_total = parseInt(this.state.apiResponse);
+            console.log(parseInt(this.state.apiResponse));
+            console.log(typeof(this.state.apiResponse));
         }
         else if(this.props.nb_parent_followers !== undefined) {
             this.nb_followers_total = this.props.nb_parent_followers;
@@ -47,15 +49,15 @@ class FollowersWidget extends React.Component {
         }
     }
 
-    // callAPI() {
-    //     fetch("http://localhost:3000/testAPI")
-    //         .then(res => res.text())
-    //         .then(res => this.setState({ apiResponse: res }));
-    // }
+    callAPI() {
+        fetch("http://localhost:9000/followers/nb-teams")
+            .then(res => res.text())
+            .then(res => this.setState({ apiResponse: res }));
+    }
 
-    // componentWillMount() {
-    //     this.callAPI();
-    // }
+    componentWillMount() {
+        this.callAPI();
+    }
 
     componentDidMount() {
         setInterval(() => {
