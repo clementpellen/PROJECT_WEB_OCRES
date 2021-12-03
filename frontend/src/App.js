@@ -16,7 +16,9 @@ export default function App() {
         <Route path="/lpenfant" caseSensitive={false} element={<ChildLandingPage />} />
         <Route path="/lpparent" caseSensitive={false} element={<ParentLandingPage />} />
         <Route path="/lpecole" caseSensitive={false} element={<SchoolLandingPage />} />
-        <Route path="/api" caseSensitive={false} element={<FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} cnt="4" />} />
+        <Route path="/api" caseSensitive={false} element={
+          <FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} day="4" time="16:00"/>
+        } />
       </Routes>
     </Router>
   );
