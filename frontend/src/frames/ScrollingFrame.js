@@ -47,9 +47,7 @@ class ScrollingFrame extends React.Component {
                     argument={CONFIDENCE_ARGUMENT} 
                     title={CONFIDENCE_ARGUMENT_TITLE} 
                     color={WHITE_ARGUMENT} 
-                    nb_teams_on_appli={this.props.nb_teams_on_appli} 
-                    nb_parent_followers={this.props.nb_parent_followers} 
-                    nb_school_followers={this.props.nb_school_followers} 
+                    widget_type={this.props.widget_type} 
                     description_widget={this.props.description_widget} 
                     cta={this.props.cta}/>
 
