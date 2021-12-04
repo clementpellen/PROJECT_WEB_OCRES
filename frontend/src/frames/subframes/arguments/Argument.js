@@ -49,7 +49,7 @@ class Argument extends React.Component {
         const className_argument = 'Argument ' +this.props.color;
         return(
             <div className={className_argument}>
-                <h2 className='title'>{this.props.title}</h2>
+                {this.props.title}
                 {this.displayArgumentContent()};
             </div>    
         );

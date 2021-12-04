@@ -12,9 +12,10 @@ const PROBLEM_ARGUMENT = 'problem';
 const CONFIDENCE_ARGUMENT = 'confidence';
 
 /* Titres des parties du ScrollingFrame */
-const SITUATION_ARGUMENT_TITLE = "⚽ Le Sport et les Jeunes";
-const PROBLEM_ARGUMENT_TITLE = "❓ Problème";
-const CONFIDENCE_ARGUMENT_TITLE = "🏫 Ils nous font confiance";
+// const SITUATION_ARGUMENT_TITLE = "⚽ Le Sport et les Jeunes";
+const SITUATION_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>⚽</p><h2 className='title'> Le Sport et les Jeunes</h2></div>;
+const PROBLEM_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>❓</p><h2 className='title'> Problème</h2></div>;
+const CONFIDENCE_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>🏫</p><h2 className='title'> Ils nous font confiance</h2></div>;
 
 const WHITE_ARGUMENT = 'white-argument';
 const BLACK_ARGUMENT = 'black-argument';
