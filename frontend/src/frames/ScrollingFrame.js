@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PartnerButton from '../buttons/PartnerButton.js';
-import Argument from './arguments/Argument.js';
+import Argument from './subframes/arguments/Argument.js';
 
 import '../reset.css';
 import './ScrollingFrame.css';
