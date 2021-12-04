@@ -16,6 +16,16 @@ class BackFrame extends React.Component {
     
     determineAnimationMarginTop() {
         switch (this.props.backframe_id) {
+            case "child-backframe":
+                this.setState({
+                    animation_margin_top : window.innerHeight - 780
+                });
+                break;
+            case "parent-backframe":
+                this.setState({
+                    animation_margin_top : window.innerHeight - 730
+                });
+                break;
             case "school-backframe":
                 this.setState({
                     animation_margin_top : window.innerHeight - 700
