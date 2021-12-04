@@ -16,6 +16,10 @@ class FollowersWidget extends React.Component {
 
     nb_followers_total;
 
+    launch_increment = false;
+
+    interval;
+
     constructor(props) {
         super(props);
         this.state = {nb_followers : 0, apiResponse: ""}
@@ -35,8 +39,6 @@ class FollowersWidget extends React.Component {
     determineNbFollowers() {
         if(this.props.nb_teams_on_appli !== undefined) {
             this.nb_followers_total = parseInt(this.state.apiResponse);
-            console.log(parseInt(this.state.apiResponse));
-            console.log(typeof(this.state.apiResponse));
         }
         else if(this.props.nb_parent_followers !== undefined) {
             this.nb_followers_total = this.props.nb_parent_followers;
@@ -59,11 +61,19 @@ class FollowersWidget extends React.Component {
         this.callAPI();
     }
 
-    componentDidMount() {
-        setInterval(() => {
+    // componentDidMount() {}
+
+    incrementNbFollowers = () => {
+        this.interval = setInterval(() => {
             if(this.checkWindowScroll())
                 this.tick();
         }, this.determineIntervalTime());
+
+        if(!isNaN(this.nb_followers_total) && !isNaN(this.state.nb_followers)) {
+            if(this.state.nb_followers > this.nb_followers_total) {
+                clearInterval(this.interval);
+            }
+        }
     }
 
     componentWillUnmount() {
@@ -76,17 +86,32 @@ class FollowersWidget extends React.Component {
         });
     }
 
-    displayNbFollowers() {              
-        if(this.state.nb_followers < this.nb_followers_total) {
-            return this.state.nb_followers;
+    displayNbFollowers() {        
+        if(!isNaN(this.nb_followers_total) && !isNaN(this.state.nb_followers)) {
+            if(this.state.nb_followers < this.nb_followers_total) {
+                return this.state.nb_followers;
+            }
+            else {
+                return this.nb_followers_total;
+            }
         }
         else {
-            return this.nb_followers_total;
+            return 0;
         }
     }
 
     render() {
-        this.determineNbFollowers();
+        
+        if(isNaN(this.nb_followers_total)) {
+            this.determineNbFollowers();
+            this.launch_increment = true;
+        }
+
+        if(!isNaN(this.nb_followers_total) && this.launch_increment) {
+            this.incrementNbFollowers();
+            this.launch_increment = false;
+        }
+
         return(
             <div className='FollowersWidget'>
                 <h1>{this.displayNbFollowers()}</h1>
