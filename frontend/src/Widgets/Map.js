@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, InfoWindow, Marker} from 'google-maps-react';
-import MapFrontFrame from './frames/MapFrontFrame.js'
+import MapFrontFrame from '../frames/MapFrontFrame.js'
 
-import './Parallax.css';
+import '../Parallax.css';
 
 const mapStyles = {
     width: '100%',
