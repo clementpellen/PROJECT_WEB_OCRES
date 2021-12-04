@@ -10,16 +10,16 @@ export default class FieldReservationWidget extends React.Component {
 			emoji: "test",
 			text: "31",
 			// le type est lie au css
-			type: "field-occupied"
+			type: "field-free"
 		};
 	}
 
 	renderText() {
-		if (this.state.type != "field-free") {
-			if(this.state.type =="field-occupied")
-				this.state.text = "occupé"
+		if (this.state.type !== "field-free") {
+			if(this.state.type ==="field-occupied")
+				this.setState({text: "occupé"});
 			else {
-				this.state.text = "retenu"
+				this.setState({ text: "retenu" });
 			}
 			return <p>{this.state.text}</p>;
 		}
@@ -30,16 +30,16 @@ export default class FieldReservationWidget extends React.Component {
 
 	renderEmoji() {
 		const EMOJI_SIZE = 40;
-		if (this.state.type != "field-free") {
-			if (this.state.type == "field-occupied")
-				this.state.emoji = "❌"
+		if (this.state.type !== "field-free") {
+			if (this.state.type === "field-occupied")
+				this.setState({ emoji: "❌" });
 			else {
-				this.state.emoji = "⚽"
+				this.setState({ emoji: "⚽" });
 			}
 			return <p style={{ 'font-size': EMOJI_SIZE / 2 + 'px'}}>{this.state.emoji}</p>;
 		}
 		else {
-			return <img src={this.state.emoji} style={{'width': EMOJI_SIZE + 'px'}} />;
+			return <img src={this.state.emoji} style={{'width': EMOJI_SIZE + 'px'}} alt="meteo" />;
 		}		
 	}
 
@@ -55,11 +55,14 @@ export default class FieldReservationWidget extends React.Component {
 			.then(res => this.setState({
 				emoji: `${API_URL_ICON}${res.list[parseInt(this.props.day) - 1].weather[0].icon}@2x.png`,
 				text: res.list[parseInt(this.props.day)-1].temp.day,
-			}));
+			}))
+			.catch(error => console.log(error));
 	}
 
-	componentWillMount() {
-		this.callAPI();
+	componentDidMount() {
+		if (this.state.type === "field-free") {
+			this.callAPI();
+		}
 	}
 
 	render() {

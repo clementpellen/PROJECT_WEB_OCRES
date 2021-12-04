@@ -24,7 +24,7 @@ export default class CallApi extends React.Component {
 			.then(res => this.setState({ apiResponse: res.name }));
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		this.callAPI();
 	}
 

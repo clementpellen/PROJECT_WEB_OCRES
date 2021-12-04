@@ -7,8 +7,6 @@ export default class FieldReservationCarrousel extends React.Component {
         super(props);
         this.state = { 
             apiResponse: "",
-            dayDisplayed: "1",
-            positionDisplayed: { lat: 48.831390, lng: 2.271667 }
         };
     }
 
@@ -18,7 +16,7 @@ export default class FieldReservationCarrousel extends React.Component {
     //         .then(res => this.setState({ apiResponse: res }));
     // }
 
-    // componentWillMount() {
+    // componentDidMount() {
     //     this.callAPI();
     // }
 
@@ -27,7 +25,7 @@ export default class FieldReservationCarrousel extends React.Component {
 		const returnBuffer = [];
 		for (var i = new Date().getUTCHours() + 2; i < 24; i++) {
 			returnBuffer.push(
-				<FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} day="1" time={i + ":00"} />
+				<FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} day={this.props.day} time={i + ":00"} key={i}/>
 			);
         }
 		return returnBuffer;
@@ -35,7 +33,7 @@ export default class FieldReservationCarrousel extends React.Component {
 
     render() {
         return (
-            this.renderWidgets()
+           this.renderWidgets()
         );
     }
 }
