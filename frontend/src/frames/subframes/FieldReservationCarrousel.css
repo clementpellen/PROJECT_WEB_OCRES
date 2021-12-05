@@ -1,0 +1,16 @@
+.reservation-carrousel-container {
+    width: 80vw;
+    margin: auto;
+}
+
+.reservation-carrousel-scroller {
+    padding: 10px;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+}
+
+.reservation-carrousel-scroller > div {
+  text-align: center;
+  margin: 10px;  /* and that, will result in a 10px gap */
+}

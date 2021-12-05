@@ -19,7 +19,7 @@ export default function App() {
 				<Route path="/lpecole" caseSensitive={false} element={<SchoolLandingPage />} />
 				<Route path="/api" caseSensitive={false} element={
 					//<FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} day="4" time="10:00"/>
-					<FieldReservationCarrousel day="1"/>
+					<FieldReservationCarrousel position={{ lat: 48.831390, lng: 2.271667 }} day="1"/>
 				} />
 			</Routes>
 		</Router>
