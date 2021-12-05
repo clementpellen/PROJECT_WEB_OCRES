@@ -15,11 +15,3 @@
 .FrontFrame .transparent-block {
     box-sizing: border-box; width: 100%;
 }
-
-
-/****** MAP *******/
-
- .MapContainer .FrontFrame {
-     margin-top: 550rem;
-     height: 270rem;
- }

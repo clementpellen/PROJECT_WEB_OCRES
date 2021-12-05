@@ -14,7 +14,9 @@ export class MapContainer extends Component {
 	state = {
 		showingInfoWindow: false,  // Hides or shows the InfoWindow
 		activeMarker: {},          // Shows the active marker upon click
-		selectedPlace: {}          // Shows the InfoWindow to the selected place upon a marker
+		selectedPlace: {},         // Shows the InfoWindow to the selected place upon a marker
+
+		frontframe_margin_top : window.innerHeight - 185
 	};
 
 	onMarkerClick = (props, marker, e) => {
@@ -47,6 +49,9 @@ export class MapContainer extends Component {
 	};
 	
 	render() {
+
+		var style = this.state.frontframe_margin_top + 'rem';
+
 		return (
 			<div className='MapContainer'>
 				<Map className="BackFrame"
@@ -75,7 +80,9 @@ export class MapContainer extends Component {
 						</div>
 					</InfoWindow>
 				</Map>
-				{this.renderFrontFrame()}
+				<div className='FrontFrame' style={{marginTop : style}}>	
+					{this.renderFrontFrame()}
+				</div>
 			</div>
 		);
 	}

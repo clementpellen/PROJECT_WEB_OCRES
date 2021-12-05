@@ -42,7 +42,7 @@ export default class MapFrontFrame extends React.Component {
 
 	render() {
 		return(
-			<main className='MapFrontFrame FrontFrame'>
+			<main className='MapFrontFrame'>
 				<h3>Ecole Rouelle</h3>
 				<h4>
 					<button onClick={this.dayDown} style={{ 'backgroundColor': 'var(--white)' }}> &nbsp;{"<"}&nbsp; </button>
