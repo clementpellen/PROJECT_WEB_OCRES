@@ -25,11 +25,11 @@ export default class FieldReservationCarrousel extends React.Component {
 		fetch(`${API_URL}?lat=${this.props.position.lat}&lon=${this.props.position.lng}&appid=${API_KEY}&cnt=${this.props.day}&units=metric`)
 			.then(res => res.json())
 			.then(res => this.setState({
-				emoji: `${API_URL_ICON}${res.list[parseInt(this.props.day) - 1].weather[0].icon}@2x.png`,
-				morn: res.list[parseInt(this.props.day) - 1].temp.morn,
-				day : res.list[parseInt(this.props.day) - 1].temp.day,
-				eve: res.list[parseInt(this.props.day) - 1].temp.eve,
-				night: res.list[parseInt(this.props.day) - 1].temp.night
+				emoji: `${API_URL_ICON}${res.list[this.props.day - 1].weather[0].icon}@2x.png`,
+				morn: res.list[this.props.day - 1].temp.morn,
+				day : res.list[this.props.day - 1].temp.day,
+				eve: res.list[this.props.day - 1].temp.eve,
+				night: res.list[this.props.day - 1].temp.night
 			}))
 			.catch(error => console.log(error));
 	}
@@ -37,12 +37,15 @@ export default class FieldReservationCarrousel extends React.Component {
 
 	componentDidMount() {
 		this.getApiMeteoInfo();
-		console.log(this.state.meteo);
 	}
 
     renderWidgets() {
 		const returnBuffer = [];
-		for (var i = new Date().getUTCHours() + 2; i < 24; i++) {
+		var start = 0;
+		if(this.props.day === 1) {
+			start = new Date().getUTCHours() + 2
+		}
+		for (var i = start; i < 24; i++) {
 			var text;
 			if(i <= 4 || i > 22)
 				text = this.state.night;

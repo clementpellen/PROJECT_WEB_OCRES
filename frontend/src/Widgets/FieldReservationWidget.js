@@ -8,7 +8,7 @@ export default class FieldReservationWidget extends React.Component {
 		super(props);
 		this.state = { 
 			// le type est lie au css
-			type: "field-retained",
+			type: "field-free",
 		};
 	}
 
@@ -29,9 +29,9 @@ export default class FieldReservationWidget extends React.Component {
 		const EMOJI_SIZE = 40;
 		if (this.state.type !== "field-free") {
 			if (this.state.type === "field-occupied")
-				return <p style={{ 'font-size': EMOJI_SIZE / 2 + 'px' }}>❌</p>;
+				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>❌</p>;
 			else {
-				return <p style={{ 'font-size': EMOJI_SIZE / 2 + 'px' }}>⚽</p>;
+				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>⚽</p>;
 			}
 		}
 		else {

@@ -4,10 +4,9 @@ import ChildLandingPage from './landingpages/ChildLandingPage.js';
 import ParentLandingPage from './landingpages/ParentLandingPage.js';
 import SchoolLandingPage from './landingpages/SchoolLandingPage.js';
 import FieldReservationCarrousel from './frames/subframes/FieldReservationCarrousel.js';
-import FieldReservationWidget from './Widgets/FieldReservationWidget.js';
 import Map from './Widgets/Map.js';
 
-import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 export default function App() {
 	return (
