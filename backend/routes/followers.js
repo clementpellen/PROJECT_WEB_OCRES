@@ -90,5 +90,4 @@ router.get('/nb-schools', (req, res) => {
     res.status(200).json(followers.schools.length);
 });
 
-
 module.exports = router;

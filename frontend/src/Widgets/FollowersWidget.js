@@ -4,10 +4,6 @@ import React from 'react';
 
 import './FollowersWidget.css';
 
-// const NB_SCHOOL_FOLLOWERS_TOTAL = 18;
-
-// const NB_FOLLOWERS_TOTAL = 3;
-
 const WINDOW_SCROLL_MIN = 730;
 
 class FollowersWidget extends React.Component {
@@ -15,6 +11,10 @@ class FollowersWidget extends React.Component {
     _isMounted = false;
 
     nb_followers_total;
+
+    launch_increment = false;
+
+    interval;
 
     constructor(props) {
         super(props);
@@ -33,16 +33,14 @@ class FollowersWidget extends React.Component {
     }
 
     determineNbFollowers() {
-        if(this.props.nb_teams_on_appli !== undefined) {
+        if(this.props.widget_type === "teams") {
             this.nb_followers_total = parseInt(this.state.apiResponse);
-            console.log(parseInt(this.state.apiResponse));
-            console.log(typeof(this.state.apiResponse));
         }
-        else if(this.props.nb_parent_followers !== undefined) {
-            this.nb_followers_total = this.props.nb_parent_followers;
+        else if(this.props.widget_type === "parents") {
+            this.nb_followers_total = parseInt(this.state.apiResponse);
         }
-        else if(this.props.nb_school_followers !== undefined) {
-            this.nb_followers_total = this.props.nb_school_followers;
+        else if(this.props.widget_type === "schools") {
+            this.nb_followers_total = parseInt(this.state.apiResponse);
         }
         else {
             console.log("ERROR : No Value For Widget");
@@ -50,7 +48,23 @@ class FollowersWidget extends React.Component {
     }
 
     callAPI() {
-        fetch("http://localhost:9000/followers/nb-teams")
+        var api_request;
+        
+        switch (this.props.widget_type) {
+            case "teams":
+                api_request = "http://localhost:9000/followers/nb-teams"
+                break;
+            case "parents":
+                api_request = "http://localhost:9000/followers/nb-parents"
+                break;
+            case "schools":
+                api_request = "http://localhost:9000/followers/nb-schools"
+                break;
+            default:
+                break;
+        }
+
+        fetch(api_request)
             .then(res => res.text())
             .then(res => this.setState({ apiResponse: res }));
     }
@@ -59,11 +73,19 @@ class FollowersWidget extends React.Component {
         this.callAPI();
     }
 
-    componentDidMount() {
-        setInterval(() => {
+    // componentDidMount() {}
+
+    incrementNbFollowers = () => {
+        this.interval = setInterval(() => {
             if(this.checkWindowScroll())
                 this.tick();
         }, this.determineIntervalTime());
+
+        if(!isNaN(this.nb_followers_total) && !isNaN(this.state.nb_followers)) {
+            if(this.state.nb_followers > this.nb_followers_total) {
+                clearInterval(this.interval);
+            }
+        }
     }
 
     componentWillUnmount() {
@@ -76,17 +98,32 @@ class FollowersWidget extends React.Component {
         });
     }
 
-    displayNbFollowers() {              
-        if(this.state.nb_followers < this.nb_followers_total) {
-            return this.state.nb_followers;
+    displayNbFollowers() {        
+        if(!isNaN(this.nb_followers_total) && !isNaN(this.state.nb_followers)) {
+            if(this.state.nb_followers < this.nb_followers_total) {
+                return this.state.nb_followers;
+            }
+            else {
+                return this.nb_followers_total;
+            }
         }
         else {
-            return this.nb_followers_total;
+            return 0;
         }
     }
 
     render() {
-        this.determineNbFollowers();
+        
+        if(isNaN(this.nb_followers_total)) {
+            this.determineNbFollowers();
+            this.launch_increment = true;
+        }
+
+        if(!isNaN(this.nb_followers_total) && this.launch_increment) {
+            this.incrementNbFollowers();
+            this.launch_increment = false;
+        }
+
         return(
             <div className='FollowersWidget'>
                 <h1>{this.displayNbFollowers()}</h1>

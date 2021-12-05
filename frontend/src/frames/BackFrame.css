@@ -28,15 +28,12 @@
 
 .BackFrame #child-animation-id {
     box-sizing: border-box; width: 400rem;
-    margin-top: 30rem;
 }
 
 .BackFrame #parent-animation-id {
     box-sizing: border-box; width: 450rem;
-    margin-top: 20rem;
 }
 
 .BackFrame #school-animation-id {
     box-sizing: border-box; width: 400rem;
-    margin-top: 120rem;
 }

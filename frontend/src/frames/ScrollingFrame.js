@@ -12,9 +12,10 @@ const PROBLEM_ARGUMENT = 'problem';
 const CONFIDENCE_ARGUMENT = 'confidence';
 
 /* Titres des parties du ScrollingFrame */
-const SITUATION_ARGUMENT_TITLE = "⚽ Le Sport et les Jeunes";
-const PROBLEM_ARGUMENT_TITLE = "❓ Problème";
-const CONFIDENCE_ARGUMENT_TITLE = "🏫 Ils nous font confiance";
+// const SITUATION_ARGUMENT_TITLE = "⚽ Le Sport et les Jeunes";
+const SITUATION_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>⚽</p><h2 className='title'> Le Sport et les Jeunes</h2></div>;
+const PROBLEM_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>❓</p><h2 className='title'> Problème</h2></div>;
+const CONFIDENCE_ARGUMENT_TITLE = <div className='title-box'><p className='emoji'>🏫</p><h2 className='title'> Ils nous font confiance</h2></div>;
 
 const WHITE_ARGUMENT = 'white-argument';
 const BLACK_ARGUMENT = 'black-argument';
@@ -47,9 +48,7 @@ class ScrollingFrame extends React.Component {
                     argument={CONFIDENCE_ARGUMENT} 
                     title={CONFIDENCE_ARGUMENT_TITLE} 
                     color={WHITE_ARGUMENT} 
-                    nb_teams_on_appli={this.props.nb_teams_on_appli} 
-                    nb_parent_followers={this.props.nb_parent_followers} 
-                    nb_school_followers={this.props.nb_school_followers} 
+                    widget_type={this.props.widget_type} 
                     description_widget={this.props.description_widget} 
                     cta={this.props.cta}/>
 
