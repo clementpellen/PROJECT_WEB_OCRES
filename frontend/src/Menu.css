@@ -7,6 +7,7 @@
     font-size: 40rem;
     font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .menu {
@@ -16,7 +17,7 @@
     background-color: var(--black);
     border: solid var(--border) 1px;
     border-radius: 20rem;
-    height: 130rem;
+    height: 130rem; width: 300rem;
     display: flex; flex-direction: column; justify-content: space-between;
     padding: 10px 0 10px 10px;
 }
