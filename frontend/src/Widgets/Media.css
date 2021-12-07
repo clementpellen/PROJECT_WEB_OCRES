@@ -58,7 +58,7 @@
     background-color: var(--white);
     border: solid var(--border) 3rem;
     border-radius: 10rem;
-    height: 70rem; width: 350rem;
+    width: 350rem;
     display: flex; flex-direction: column; justify-content: space-around; align-items: center;
 }
 
@@ -66,8 +66,13 @@
     display: flex;
 }
 
+.team-name {
+    width: 130rem;
+}
+
 .team-left {
     margin-right: 10rem;
+    text-align: right;
 }
 
 .team-right {
