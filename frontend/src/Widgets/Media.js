@@ -27,14 +27,10 @@ export default class Media extends React.Component {
 		};
 
         // on va voir ton lien
-        fetch(`http://api.football-data.org/v2/competitions/2000/teams`)
+        fetch(`https://api.football-data.org/v2/teams/${this.state.value}/matches?status=SCHEDULED`, obj)
             .then(res => res.json()) // on récupére la reponse en json comme ca on peut se ballader dedans avec des points
-            .then(res => this.setState({ apiResponse: res.All.confirmed })) // justement on se balade dedans avec des points
+            .then(res => console.log(res.matches[res.matches.length-1])) // justement on se balade dedans avec des points
             .catch(error => console.log(error)); // ca c'est par sécurité
-    }
-    
-    componentDidMount() {
-        // this.callAPI();
     }
 
     handleChange(event) {
@@ -42,20 +38,24 @@ export default class Media extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('Le nom a été soumis : ' + this.state.value);
+        alert('Le numéro a été soumis : ' + this.state.value);
+        this.callAPI();
         event.preventDefault();
     }
 
     BarChart() {
         return(
             <div className='BarChart'>
+
+                <h2>{this.state.apiResponse}</h2>
+
                 <Line 
                     data={{
-                        labels: ['Match 1', 'Match 2', 'Match 3', 'Match 4', 'Match 5', 'Match 6'],
+                        labels: ['Match 1', 'Match 2', 'Match 3', 'Match 4', 'Match 5'],
                         datasets: [
                             {
                                 label: "Différence de buts des derniers matches",
-                                data: [3, -1, 0, 0, 2, 1]
+                                data: [3, -1, 0, 0, 2]
                             }
                         ]
                     }}
