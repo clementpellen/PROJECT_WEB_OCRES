@@ -1,0 +1,75 @@
+.Media {
+    background-color: var(--blue-light);
+    height: 100%; width: 100%;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+}
+
+.Media label {
+    font-size: 20rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.Media .team-number {
+    margin-bottom: 10rem;
+}
+
+.Media .input_text {
+    height: 30rem; width: 240rem;
+    border: solid var(--dark) 2rem;
+    border-radius: 10rem;
+}
+
+.Media .input_submit {
+    height: 30rem; width: 100rem;
+    border: solid var(--dark) 2rem;
+    border-radius: 10rem;
+    font-size: 20rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    margin-left: 5rem;
+}
+
+
+@media screen and (min-device-width:700px) {
+    .stats-box {
+        width: 100%; max-width: 1000rem;
+        display: flex; justify-content: space-around; align-items: center;
+    }
+}
+@media screen and (max-device-width:700px) {
+    .Media {
+        padding-top: 80rem;
+    }
+    
+    .stats-box {
+        width: 100%; height: 500rem;
+        display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+    }
+}
+
+.BarChart {
+    background-color: var(--white);
+    border: solid var(--border) 3rem;
+    border-radius: 10rem;
+}
+
+.last-match {
+    background-color: var(--white);
+    border: solid var(--border) 3rem;
+    border-radius: 10rem;
+    height: 70rem; width: 350rem;
+    display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+}
+
+.score {
+    display: flex;
+}
+
+.team-left {
+    margin-right: 10rem;
+}
+
+.team-right {
+    margin-left: 10rem;
+}

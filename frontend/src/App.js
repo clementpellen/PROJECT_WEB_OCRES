@@ -6,12 +6,14 @@ import SchoolLandingPage from './landingpages/SchoolLandingPage.js';
 import FieldReservationCarrousel from './frames/subframes/FieldReservationCarrousel.js';
 import Map from './Widgets/Map.js';
 import Media from './Widgets/Media.js';
+import Menu from './Menu.js';
 
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 export default function App() {
 	return (
 		<Router>
+			<Menu />
 			<Routes>
 				<Route path="/" element={<Map />} />
 				<Route path="/lpenfant" caseSensitive={false} element={<ChildLandingPage />} />
