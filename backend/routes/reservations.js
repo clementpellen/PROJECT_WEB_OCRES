@@ -2,28 +2,64 @@ const express = require('express');
 const _ = require('lodash');
 var bodyParser = require('body-parser')
 
+const Reservation = require('../schema/reservation.js');
 const router = express.Router();
+
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://127.0.0.1:27017/corner')
+    .then(console.log('connected to corner'))
+    .catch(err => console.log(err));
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const functions = require("../functions.js");
+//const functions = require("../functions.js");
 
+router.get('/', (req, res) => {
+    Reservation.find(function (err, reservations) {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(reservations);
 
-router.get('/fields/:field', (req, res) => {   
-    //// quand on charge un nouveau jour
-    // get les heures sur le jour
-
-    try {
-        var rep = functions.getReservation(req.params.field);
-
-        rep.then(function (result) {
-            console.log(result)
-            res.status(200).json(result);
-        });
-    } catch(err) {
-        res.status(500).send({ error: err.message });
-    }
+    });
 });
+
+router.get('/fields/:field', (req, res) => {
+    Reservation.find({"name": req.params.field}  ,function (err, reservations) {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(reservations);
+    });
+});
+
+router.get('/fields/:field/days/:day', (req, res) => {
+    Reservation.find({ "name": req.params.field, "days.day": req.params.day }, function (err, reservations) {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(reservations);
+    });
+});
+
+// router.get('/fields/:field', (req, res) => {   
+//     //// quand on charge un nouveau jour
+//     // get les heures sur le jour
+
+   
+
+//     try {
+//         var rep = functions.getReservation(req.params.field);
+
+//         rep.then(function (result) {
+//             console.log(result)
+//             res.status(200).json(result);
+//         });
+//     } catch(err) {
+//         res.status(500).send({ error: err.message });
+//     }
+// });
 
 
 
