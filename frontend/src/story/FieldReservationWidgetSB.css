@@ -1,0 +1,27 @@
+.field-default {
+	padding : 5px 0px 5px 0px;
+	text-align: center;
+	width: 60px; height: 82px;
+	min-width: 60px;
+	border-radius: 15px;
+}
+
+.field-free {
+	color: var(--shadow);
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	border: solid var(--shadow) 1px;
+}
+
+.field-occupied {
+	color: var(--white);
+	background: var(--accent-light);
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25), inset 0px -30px 40px rgba(11, 11, 13, 0.20);
+}
+
+.field-retained {
+	color: var(--white);
+	background: var(--main-light);
+	box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.25), inset 0px -30px 40px var(--main-dark);
+}

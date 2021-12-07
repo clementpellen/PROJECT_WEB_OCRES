@@ -8,6 +8,10 @@ import Map from './Widgets/Map.js';
 import Media from './Widgets/Media.js';
 import Menu from './Menu.js';
 
+import FollowersWidgetSB from './story/FollowersWidgetSB.js';
+import FieldReservationWidgetSB from './story/FieldReservationWidgetSB.js';
+import MediaWidgetsSB from './story/MediaSB.js';
+
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 export default function App() {
@@ -24,6 +28,11 @@ export default function App() {
 					//<FieldReservationWidget position={{ lat: 48.831390, lng: 2.271667 }} day="4" time="10:00"/>
 					<FieldReservationCarrousel position={{ lat: 48.831390, lng: 2.271667 }} day="1"/>
 				} />
+
+				<Route path="/storybook1" caseSensitive={false} element={<FollowersWidgetSB />} />
+				<Route path="/storybook2" caseSensitive={false} element={<FieldReservationWidgetSB />} />
+				<Route path="/storybook3" caseSensitive={false} element={<MediaWidgetsSB />} />
+
 			</Routes>
 		</Router>
 	);

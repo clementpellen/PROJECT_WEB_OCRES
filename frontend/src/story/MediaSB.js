@@ -3,9 +3,9 @@ import React from 'react';
 import Chart from 'chart.js/auto'
 import { Line } from 'react-chartjs-2';
 
-import './Media.css';
+import './MediaSB.css';
 
-export default class Media extends React.Component {
+export default class MediaSB extends React.Component {
 
     constructor(props) {
         super(props);
@@ -51,18 +51,18 @@ export default class Media extends React.Component {
                     scorediffmatch3: res.matches[res.matches.length - 3].score.fullTime.homeTeam - res.matches[res.matches.length - 3].score.fullTime.awayTeam,
                     scorediffmatch4: res.matches[res.matches.length - 2].score.fullTime.homeTeam - res.matches[res.matches.length - 2].score.fullTime.awayTeam,
                     scorediffmatch5: res.matches[res.matches.length - 1].score.fullTime.homeTeam - res.matches[res.matches.length - 1].score.fullTime.awayTeam
-                })
+                });
                 console.log(res.matches[res.matches.length - 1]);
             }) // justement on se balade dedans avec des points
             .catch(error => console.log(error)); // ca c'est par sécurité
     }
-    
+
     handleChange(event) {
         this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
-        this.callAPI();
+        // this.callAPI();
         event.preventDefault();
     }
 
@@ -98,11 +98,11 @@ export default class Media extends React.Component {
 
     render() {
         return(
-            <div className='Media'>
+            <div className='MediaSB'>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        <h3 className='team-number'>Numéro de l'équipe :</h3>
-                        <input className='input_text' type="text" value={this.state.value} onChange={this.handleChange} />
+                        {/* <h3 className='team-number'>Numéro de l'équipe :</h3> */}
+                        {/* <input className='input_text' type="text" value={this.state.value} onChange={this.handleChange} /> */}
                     </label>
                     <input className='input_submit' type="submit" value="Choisir" />
                 </form>
