@@ -2,8 +2,10 @@
   "name": "backend",
   "version": "0.0.0",
   "private": true,
+  "main": "script.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon ./bin/www",
+    "s": "nodemon functions.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,6 +13,9 @@
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "lodash": "^4.17.21",
-    "morgan": "~1.9.1"
+    "mongodb": "^4.2.1",
+    "mongoose": "^6.0.14",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.15"
   }
 }
