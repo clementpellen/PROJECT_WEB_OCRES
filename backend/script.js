@@ -10,7 +10,38 @@ run()
 
 async function run() {
 	try {
-		const reservation = await Reservation.create({ name: "name1" });
+		const reservation = await Reservation.create({ 
+			name: "City Dupleix",
+			days: [
+				{
+					day: 20211207,
+					hours : [
+						{ teamId: 0 },{ teamId: 0 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },{ teamId: 0 },
+						{ teamId: 0 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },
+						{ teamId: 0 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },{ teamId: 0 },{ teamId: 2 },
+						{ teamId: 2 },{ teamId: 2 },{ teamId: 2 },{ teamId: 0 },{ teamId: 0 },{ teamId: 0 }
+					]
+				},
+				{
+					day: 20211208,
+					hours: [
+						{ teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: 20211209,
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }
+					]
+				}
+			]
+		 });
 		console.log(reservation)
 	} catch (err) {
 		console.log(err.message)

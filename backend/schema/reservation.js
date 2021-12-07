@@ -9,7 +9,7 @@ const fieldsSchema = new mongoose.Schema({
     days: {
         type: [{
             day: {
-                type: Date,
+                type: Number,
                 required: true
             },
             hours: [{
@@ -26,7 +26,7 @@ const fieldsSchema = new mongoose.Schema({
 // fields: {
 //     name: String,
 //     days: [{
-//         day: Date,
+//         day: Number,
 //         hours: [{
 //             teamId: Number
 //         }]
