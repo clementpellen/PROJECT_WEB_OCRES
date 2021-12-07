@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.8.3",
     "chart.js": "^3.6.2",
     "chartjs": "^0.3.24",
+    "cors": "^2.8.5",
     "google-maps-react": "^2.0.6",
     "react": "^17.0.2",
     "react-chartjs-2": "^4.0.0",
