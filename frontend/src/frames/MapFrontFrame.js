@@ -9,7 +9,8 @@ export default class MapFrontFrame extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			day: 1
+			day: 1,
+			reservations: ""
 		}
 		// pour pouvoir setState alors que le composent n'est  pas encore mounted 
 		// il faut bind les deux fonctions qui le setState
@@ -40,10 +41,22 @@ export default class MapFrontFrame extends React.Component {
 		}
 	}
 
+	getReservationInAPI() {
+		// on va voir ton lien
+		fetch(`http://localhost:9000/reservations/fields/${this.props.name}`)
+			.then(res => res.json())
+			.then(res => this.setState({ reservations: res}))
+			.catch(error => console.log(error));
+	}
+
+	componentDidMount() {
+		console.log(this.state.reservations);
+	}
+
 	render() {
 		return(
 			<main className='MapFrontFrame'>
-				<h3>Ecole Rouelle</h3>
+				<h3>{this.props.name}</h3>
 				<h4>
 					<button onClick={this.dayDown} style={{ 'backgroundColor': 'var(--white)' }}> &nbsp;{"<"}&nbsp; </button>
 					{this.renderDay()}

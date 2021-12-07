@@ -38,10 +38,14 @@ export class MapContainer extends Component {
 
 	renderFrontFrame = () => {
 		if (this.state.showingInfoWindow) {
-			return <MapFrontFrame frameIsOn={true} position={{
+			return <MapFrontFrame
+			frameIsOn={true}
+			position={{
 				lat: this.state.selectedPlace.position.lat,
 				lng: this.state.selectedPlace.position.lng
-			}} key={this.state.selectedPlace.position.lat + this.state.selectedPlace.position.lng}/>;
+			}}
+			name={this.state.selectedPlace.name}
+			key={this.state.selectedPlace.position.lat + this.state.selectedPlace.position.lng}/>;
 		}
 		else {
 			return <MapFrontFrame frameIsOn={false} position={{ lat: 48.8566, lng: 2.3522 }} />;
@@ -63,12 +67,12 @@ export class MapContainer extends Component {
 					<Marker
 						position={{lat: 48.851346, lng: 2.291883}}
 						onClick={this.onMarkerClick}
-						name={"5v5 public"}
+						name={"Dupleix"}
 					/>
 					<Marker
 						position={{lat: 40.831390, lng: 2.271667}}
 						onClick={this.onMarkerClick}
-						name={"11v11 public"}
+						name={"Balard1"}
 					/>
 					<InfoWindow
 						marker={this.state.activeMarker}

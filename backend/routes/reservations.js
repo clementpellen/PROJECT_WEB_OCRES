@@ -34,15 +34,6 @@ router.get('/fields/:field', (req, res) => {
     });
 });
 
-router.get('/fields/:field/days/:day', (req, res) => {
-    Reservation.find({ "name": req.params.field, "days.day": req.params.day }, function (err, reservations) {
-        if (err) {
-            res.status(500).send(err);
-        }
-        res.status(200).json(reservations);
-    });
-});
-
 // router.get('/fields/:field', (req, res) => {   
 //     //// quand on charge un nouveau jour
 //     // get les heures sur le jour
