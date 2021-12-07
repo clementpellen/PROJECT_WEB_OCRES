@@ -33,14 +33,14 @@ const fieldsSchema = new mongoose.Schema({
 //     }]
 // });
 
-fieldsSchema.methods.changeToFree = function(iDay, iHour) {
-    this.days[iDay].hours[iHour].teamId = 0;
+fieldsSchema.methods.changeToFree = function(day, hour) {
+    this.days[day].hours[hour].teamId = 0;
 }
 
-fieldsSchema.methods.changeTeamId = function (iDay, iHour, teamId) {
+fieldsSchema.methods.changeTeamId = function (day, hour, teamId) {
     if(teamId !== 0)
-        if (this.days[iDay].hours[iHour].teamId === 0)
-            this.days[iDay].hours[iHour].teamId = teamId;
+        if (this.days[day].hours[hour].teamId === 0)
+            this.days[day].hours[hour].teamId = teamId;
 }
 
 module.exports = mongoose.model("fields", fieldsSchema);

@@ -6,21 +6,37 @@ const router = express.Router();
 
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const mongoose = require('mongoose');
-const Reservation = require('../schema/reservation');
-
-mongoose.connect('mongodb://127.0.0.1:27017/corner')
+const functions = require("../functions.js");
 
 
-router.get('/fields/:field/days/:day', (req, res) => {
+router.get('/fields/:field', (req, res) => {   
     //// quand on charge un nouveau jour
     // get les heures sur le jour
+
     try {
-        const reservations = Reservation.find({"name": req.params.field, "days.day" : req.params.day });
-    } catch (err) {
+        var rep = functions.getReservation(req.params.field);
+
+        rep.then(function (result) {
+            console.log(result)
+            res.status(200).json(result);
+        });
+    } catch(err) {
         res.status(500).send({ error: err.message });
     }
 });
+
+
+
+// router.get('/fields/:field/days/:day', (req, res) => {
+//     //// quand on charge un nouveau jour
+//     // get les heures sur le jour
+//     try {
+//         const reservations = Reservation.find({"name": req.params.field, "days.day" : req.params.day });
+//         //res.status(200).send({ info: req.params.field, info2: req.params.day });
+//     } catch (err) {
+//         res.status(500).send({ error: err.message });
+//     }
+// });
 
 //// quand il clic sur un widget
 // post? on modifie la team du widget
