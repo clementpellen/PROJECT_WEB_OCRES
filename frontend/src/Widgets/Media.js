@@ -9,7 +9,16 @@ export default class Media extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { apiResponse: '' , value: '' };
+        this.state = {  value: '',
+                        hometeam: 'France' ,
+                        score: '3 - 0', 
+                        awayteam: 'Brésil',
+                        scorediffmatch1: 3, 
+                        scorediffmatch2: - 1, 
+                        scorediffmatch3: 0,
+                        scorediffmatch4: 0,
+                        scorediffmatch5: 3
+                        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,18 +36,34 @@ export default class Media extends React.Component {
 		};
 
         // on va voir ton lien
-        fetch(`https://api.football-data.org/v2/teams/${this.state.value}/matches?status=SCHEDULED`, obj)
+        fetch(`https://api.football-data.org/v2/teams/${this.state.value}/matches?status=FINISHED`, obj)
+        //fetch(`https://api.football-data.org/v2/teams/86/matches?status=SCHEDULED`, obj)
             .then(res => res.json()) // on récupére la reponse en json comme ca on peut se ballader dedans avec des points
-            .then(res => console.log(res.matches[res.matches.length-1])) // justement on se balade dedans avec des points
+            // .then(res => console.log(res.matches[res.matches.length-1])) // justement on se balade dedans avec des points
+            .then(res => {
+                    this.setState({
+                    hometeam: res.matches[res.matches.length - 1].homeTeam.name,
+                    score: res.matches[res.matches.length - 1].score.fullTime.homeTeam + " - " + res.matches[res.matches.length - 1].score.fullTime.awayTeam,
+                    awayteam: res.matches[res.matches.length - 1].awayTeam.name,
+
+                    scorediffmatch1: res.matches[res.matches.length - 5].score.fullTime.homeTeam - res.matches[res.matches.length - 5].score.fullTime.awayTeam,
+                    scorediffmatch2: res.matches[res.matches.length - 4].score.fullTime.homeTeam - res.matches[res.matches.length - 4].score.fullTime.awayTeam,
+                    scorediffmatch3: res.matches[res.matches.length - 3].score.fullTime.homeTeam - res.matches[res.matches.length - 3].score.fullTime.awayTeam,
+                    scorediffmatch4: res.matches[res.matches.length - 2].score.fullTime.homeTeam - res.matches[res.matches.length - 2].score.fullTime.awayTeam,
+                    scorediffmatch5: res.matches[res.matches.length - 1].score.fullTime.homeTeam - res.matches[res.matches.length - 1].score.fullTime.awayTeam
+                })
+                console.log(res.matches[res.matches.length - 1]);
+            }) // justement on se balade dedans avec des points
             .catch(error => console.log(error)); // ca c'est par sécurité
     }
+
+    // res.matches[res.matches.length - 1].awayTeam
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
 
     handleSubmit(event) {
-        alert('Le numéro a été soumis : ' + this.state.value);
         this.callAPI();
         event.preventDefault();
     }
@@ -51,11 +76,15 @@ export default class Media extends React.Component {
 
                 <Line 
                     data={{
-                        labels: ['Match 1', 'Match 2', 'Match 3', 'Match 4', 'Match 5'],
+                        labels: ['Match 1', 'Match 2', 'Match 3', 'Avant-dernier match', 'Dernier match'],
                         datasets: [
                             {
                                 label: "Différence de buts des derniers matches",
-                                data: [3, -1, 0, 0, 2]
+                                data: [ this.state.scorediffmatch1,
+                                        this.state.scorediffmatch2, 
+                                        this.state.scorediffmatch3, 
+                                        this.state.scorediffmatch4, 
+                                        this.state.scorediffmatch5]
                             }
                         ]
                     }}
@@ -76,6 +105,12 @@ export default class Media extends React.Component {
                     <label>
                         <h3 className='team-number'>Numéro de l'équipe :</h3>
                         <input className='input_text' type="text" value={this.state.value} onChange={this.handleChange} />
+                        {/* <select className='input_text'>
+                            <option value="86">Real Madrid</option>
+                            <option value="57">Arsenal</option>
+                            <option value="73">Tottenham</option>
+                            <option value="81">Barcelone</option>
+                        </select> */}
                     </label>
                     <input className='input_submit' type="submit" value="Choisir" />
                 </form>
@@ -85,9 +120,9 @@ export default class Media extends React.Component {
                     <div className='last-match'>
                         <h3>Dernier match disputé :</h3>
                         <div className='score'>
-                            <h2 className='team-left'>France</h2>
-                            <h2>3 - 0</h2>
-                            <h2 className='team-right'>Brésil</h2>
+                            <h2 className='team-name team-left'>{this.state.hometeam}</h2>
+                            <h2>{this.state.score}</h2>
+                            <h2 className='team-name team-right'>{this.state.awayteam}</h2>
                         </div>
                     </div>
                     
