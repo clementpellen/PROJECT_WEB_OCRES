@@ -9,7 +9,7 @@ const fieldsSchema = new mongoose.Schema({
     days: {
         type: [{
             day: {
-                type: Number,
+                type: Date,
                 required: true
             },
             hours: [{
