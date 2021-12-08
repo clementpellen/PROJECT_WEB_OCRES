@@ -44,6 +44,25 @@ export default class FieldReservationCarrousel extends React.Component {
 			.catch(error => console.log(error));
 	}
 
+	changeTeam() {
+		console.log("changeTeam");
+		
+		var myHeaders = new Headers();
+		//myHeaders.append("X-Auth-Token","f9475c7dc1df466b965ffe2a72d2f4a7");
+
+		var obj = {
+			method: "POST",
+			headers: myHeaders,
+			mode: "cors",
+			cache: "default"
+		};
+
+		
+		fetch(`http://localhost:9000/reservations/add`, obj)
+			.then(res => res.json())
+			.then(res => this.setState({ apiResponse: res.name }));
+	}
+
 	componentDidMount() {
 		this.getApiMeteoInfo();
 		this.getReservationInAPI();
@@ -93,12 +112,15 @@ export default class FieldReservationCarrousel extends React.Component {
 				
 				if (typeof this.state.reservations.days[reservationsIndex] !== 'undefined')
 					returnBuffer.push(
-						<FieldReservationWidget key={i}
-							emoji={this.state.emoji}
-							text={text}
-							time={i}
-							team={this.state.reservations.days[reservationsIndex].hours[i]}
-						/>
+						<div onClick={() =>this.changeTeam()} style={{ cursor: "pointer"}}>
+							<FieldReservationWidget key={i}
+								emoji={this.state.emoji}
+								text={text}
+								time={i}
+								team={this.state.reservations.days[reservationsIndex].hours[i]}
+								
+							/>
+						</div>
 					);
 			}
 			return returnBuffer;

@@ -33,6 +33,10 @@ router.get('/fields/:field', (req, res) => {
     });
 });
 
+router.post('/add', (req, res) => {
+    console.log(req)
+});
+
 // router.get('/fields/:field', (req, res) => {   
 //     //// quand on charge un nouveau jour
 //     // get les heures sur le jour
