@@ -84,11 +84,11 @@ router.post('/add', (req, res) => {
 // post? on modifie la team du widget
 
 
-//// quand ?
+//// quand undefined dans DidMount du Widget
 // put les jours suivant dans la bdd
 
 
-//// quand ? (meme occas que au dessus)
+//// quand undefined dans DidMount du Widget
 // delete les jours precedents dans la bdd
 
 

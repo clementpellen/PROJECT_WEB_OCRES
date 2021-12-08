@@ -40,6 +40,11 @@ export default class MapFrontFrame extends React.Component {
 		}
 	}
 
+	// TODO::
+	// changement de type d'équipe -> pour changer le style
+	// marker dans le back
+	// création et suppression des widgets en fonction de leurs dates
+
 	render() {
 		return(
 			<main className='MapFrontFrame'>
