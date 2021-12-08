@@ -1,3 +1,7 @@
+// route  pour acceder au endpoint RESERVATIONS
+// destine aux requetes des widgets de reservation de terrain
+// dispo sur la Map -> FrontMap -> CarrouselReservation
+
 const express = require('express');
 const _ = require('lodash');
 var bodyParser = require('body-parser')

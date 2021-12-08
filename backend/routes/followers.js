@@ -1,3 +1,6 @@
+// route  pour acceder au endpoint FOLLOWERS
+// destine aux requetes des landings pages
+
 const express = require('express');
 // Lodash utils library
 const _ = require('lodash');

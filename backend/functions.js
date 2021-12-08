@@ -1,10 +1,15 @@
-// getting-started.js
+// fonction qui peut etre lance avec npm run s
+// permet de creer de nouveaux exemples dans la bdd
+// il faut uncomment la ligne 12
+
 const mongoose = require('mongoose');
 const Reservation = require('./schema/reservation');
 
 mongoose.connect('mongodb://127.0.0.1:27017/corner')
 	.then(console.log('connected to corner'))
 	.catch(err => console.log(err));
+
+// createReservation();
 
 async function createReservation() {
 	try {
