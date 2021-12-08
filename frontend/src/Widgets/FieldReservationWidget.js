@@ -7,23 +7,20 @@ const teamId = 1;
 export default class FieldReservationWidget extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = { 
-			// le type est lie au css
-			//type: "field-occupied"
-		};
 	}
 
-	// setType() {
-	// 	if (this.props.team === 0) {
-	// 		this.setState({ type: "field-free" });
-	// 	} else if (this.props.team === teamId) {
-	// 		this.setState({ type: "field-retained" });
-	// 	}
-	// }
+	getCssClassName() {
+		if (this.props.team.teamId === 0)
+			return "field-free";
+		else if (this.props.team.teamId === teamId)
+			return "field-retained";
+		else
+			return "field-occupied";
+	}
 
 	renderText() {
-		if (this.props.team !== 0) {
-			if(this.props.team !== teamId)
+		if (this.props.team.teamId !== 0) {
+			if (this.props.team.teamId !== teamId)
 			return <p>occupé</p>;
 			else {
 				return <p>retenu</p>;
@@ -35,16 +32,16 @@ export default class FieldReservationWidget extends React.Component {
 	}
 
 	renderEmoji() {
-		const EMOJI_SIZE = 40;
-		if (this.props.team !== 0) {
-			if (this.props.team !== teamId)
-				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>❌</p>;
+		const EMOJI_SIZE = 10;
+		if (this.props.team.teamId !== 0) {
+			if (this.props.team.teamId !== teamId)
+				return <p style={{ 'fontSize': EMOJI_SIZE*2 + 'px', 'paddingTop': EMOJI_SIZE + 'px', 'paddingBottom': EMOJI_SIZE + 'px' }}>❌</p>;
 			else {
-				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>⚽</p>;
+				return <p style={{ 'fontSize': EMOJI_SIZE*2 + 'px', 'paddingTop': EMOJI_SIZE + 'px', 'paddingBottom': EMOJI_SIZE + 'px' }}>⚽</p>;
 			}
 		}
 		else {
-			return <img src={this.props.emoji} style={{'width': EMOJI_SIZE + 'px'}} alt="meteo" />;
+			return <img src={this.props.emoji} style={{'width': EMOJI_SIZE*4 + 'px'}} alt="meteo" />;
 		}		
 	}
 
@@ -53,12 +50,12 @@ export default class FieldReservationWidget extends React.Component {
 		//
 		// TODO
 		// 
-		console.log(this.props.team);
+		// console.log(this.props.team.teamId);
 	}
 
 	render() {
 		return (
-			<div className={"field-default " + this.state.type}>
+			<div className={"field-default " + this.getCssClassName()}>
 				<p className="time">{this.props.time}:00</p>
 				{this.renderEmoji()}
 				{this.renderText()}
