@@ -2,19 +2,28 @@
 import React from 'react';
 import './FieldReservationWidget.css';
 
-export default class FieldReservationWidget extends React.Component {
+const teamId = 1;
 
+export default class FieldReservationWidget extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = { 
 			// le type est lie au css
-			type: "field-free",
+			//type: "field-occupied"
 		};
 	}
 
+	// setType() {
+	// 	if (this.props.team === 0) {
+	// 		this.setState({ type: "field-free" });
+	// 	} else if (this.props.team === teamId) {
+	// 		this.setState({ type: "field-retained" });
+	// 	}
+	// }
+
 	renderText() {
-		if (this.state.type !== "field-free") {
-			if(this.state.type ==="field-occupied")
+		if (this.props.team !== 0) {
+			if(this.props.team !== teamId)
 			return <p>occupé</p>;
 			else {
 				return <p>retenu</p>;
@@ -27,8 +36,8 @@ export default class FieldReservationWidget extends React.Component {
 
 	renderEmoji() {
 		const EMOJI_SIZE = 40;
-		if (this.state.type !== "field-free") {
-			if (this.state.type === "field-occupied")
+		if (this.props.team !== 0) {
+			if (this.props.team !== teamId)
 				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>❌</p>;
 			else {
 				return <p style={{ 'fontSize': EMOJI_SIZE / 2 + 'px' }}>⚽</p>;
@@ -37,6 +46,14 @@ export default class FieldReservationWidget extends React.Component {
 		else {
 			return <img src={this.props.emoji} style={{'width': EMOJI_SIZE + 'px'}} alt="meteo" />;
 		}		
+	}
+
+	componentDidMount() {
+		// si undefined on crée un component vide
+		//
+		// TODO
+		// 
+		console.log(this.props.team);
 	}
 
 	render() {

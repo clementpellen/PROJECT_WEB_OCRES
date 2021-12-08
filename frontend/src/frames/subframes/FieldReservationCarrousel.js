@@ -64,12 +64,12 @@ export default class FieldReservationCarrousel extends React.Component {
 				// on utilise .entries() parce que ca renvoie un tableau de paires 
 				// de propriétés [clé, valeur] énumérables de notre aray days
 				// on peut alors utiliser la clé -> l'indice i de boucle de days
-				for (const [i, elem] of this.state.reservations.days.entries()) {
+				for (const [j, elem] of this.state.reservations.days.entries()) {
 					const d1 = new Date(Date.parse(elem.day));
 					var d2 = new Date();
 					d2.setDate(d2.getDate() + this.props.day - 1);
 					if (d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate()) {
-						reservationsIndex = i
+						reservationsIndex = j;
 						break;
 					}
 				}
@@ -90,9 +90,16 @@ export default class FieldReservationCarrousel extends React.Component {
 					text = this.state.day;
 				else
 					text = this.state.eve;
-				returnBuffer.push(
-					<FieldReservationWidget key={i} emoji={this.state.emoji} text={text} time={i} reservations={this.state.reservations} />
-				);
+				
+				if (typeof this.state.reservations.days[reservationsIndex] !== 'undefined')
+					returnBuffer.push(
+						<FieldReservationWidget key={i}
+							emoji={this.state.emoji}
+							text={text}
+							time={i}
+							team={this.state.reservations.days[reservationsIndex].hours[i]}
+						/>
+					);
 			}
 			return returnBuffer;
 		}
