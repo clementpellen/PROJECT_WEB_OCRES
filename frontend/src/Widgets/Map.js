@@ -60,9 +60,9 @@ export class MapContainer extends Component {
 			<div className='MapContainer'>
 				<Map className="BackFrame"
 					google={this.props.google}
-					zoom={13}
+					zoom={14}
 					style={mapStyles}
-					initialCenter={{lat: 48.8534, lng: 2.3488}}
+					initialCenter={{ lat: 48.8452, lng: 2.2776}}
 				>
 					<Marker
 						position={{lat: 48.851346, lng: 2.291883}}
@@ -70,9 +70,34 @@ export class MapContainer extends Component {
 						name={"Dupleix"}
 					/>
 					<Marker
-						position={{lat: 40.831390, lng: 2.271667}}
+						position={{lat: 48.831390, lng: 2.271667}}
 						onClick={this.onMarkerClick}
 						name={"Balard1"}
+					/>
+					<Marker
+						position={{ lat: 48.830116, lng: 2.272554 }}
+						onClick={this.onMarkerClick}
+						name={"Balard2"}
+					/>
+					<Marker
+						position={{ lat: 48.856151, lng: 2.291551 }}
+						onClick={this.onMarkerClick}
+						name={"FootballGround"}
+					/>
+					<Marker
+						position={{ lat: 48.826522, lng: 2.299791 }}
+						onClick={this.onMarkerClick}
+						name={"Rigoulot"}
+					/>
+					<Marker
+						position={{ lat: 48.864469, lng: 2.269529 }}
+						onClick={this.onMarkerClick}
+						name={"LaMuette"}
+					/>
+					<Marker
+						position={{ lat: 48.847017, lng: 2.258061 }}
+						onClick={this.onMarkerClick}
+						name={"Hebert"}
 					/>
 					<InfoWindow
 						marker={this.state.activeMarker}

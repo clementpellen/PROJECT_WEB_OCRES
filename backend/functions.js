@@ -12,7 +12,7 @@ async function createReservation() {
 			name: "Balard2",
 			days: [
 				{
-					day: "2002-12-09",
+					day: "2021-12-08",
 					hours : [
 						{ teamId: 1 },{ teamId: 2 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },{ teamId: 0 },
 						{ teamId: 2 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },{ teamId: 2 },{ teamId: 0 },
@@ -21,7 +21,7 @@ async function createReservation() {
 					]
 				},
 				{
-					day: "2002-12-09",
+					day: "2021-12-09",
 					hours: [
 						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
 						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
@@ -30,7 +30,151 @@ async function createReservation() {
 					]
 				},
 				{
-					day: "2002-12-09",
+					day: "2021-12-10",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-11",
+					hours: [
+						{ teamId: 1 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-12",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-13",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-14",
+					hours: [
+						{ teamId: 1 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-15",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-16",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-17",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-18",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-19",
+					hours: [
+						{ teamId: 1 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 0 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-20",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-21",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-22",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-23",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-24",
+					hours: [
+						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 1 }, { teamId: 2 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-25",
+					hours: [
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 1 },
+						{ teamId: 2 }, { teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 },
+						{ teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 0 }, { teamId: 0 }, { teamId: 0 }
+					]
+				},
+				{
+					day: "2021-12-26",
 					hours: [
 						{ teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 }, { teamId: 2 },
 						{ teamId: 0 }, { teamId: 1 }, { teamId: 0 }, { teamId: 0 }, { teamId: 2 }, { teamId: 2 },
@@ -40,7 +184,6 @@ async function createReservation() {
 				}
 			]
 		 });
-		console.log(reservation)
 	} catch (err) {
 		console.log(err.message)
 	}
