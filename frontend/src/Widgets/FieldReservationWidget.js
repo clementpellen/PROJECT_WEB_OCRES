@@ -2,8 +2,6 @@
 import React from 'react';
 import './FieldReservationWidget.css';
 
-const teamId = 1;
-
 export default class FieldReservationWidget extends React.Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +10,7 @@ export default class FieldReservationWidget extends React.Component {
 	getCssClassName() {
 		if (this.props.team.teamId === 0)
 			return "field-free";
-		else if (this.props.team.teamId === teamId)
+		else if (this.props.team.teamId === this.props.myTeam)
 			return "field-retained";
 		else
 			return "field-occupied";
@@ -20,7 +18,7 @@ export default class FieldReservationWidget extends React.Component {
 
 	renderText() {
 		if (this.props.team.teamId !== 0) {
-			if (this.props.team.teamId !== teamId)
+			if (this.props.team.teamId !== this.props.myTeam)
 			return <p>occupé</p>;
 			else {
 				return <p>retenu</p>;
@@ -34,7 +32,7 @@ export default class FieldReservationWidget extends React.Component {
 	renderEmoji() {
 		const EMOJI_SIZE = 10;
 		if (this.props.team.teamId !== 0) {
-			if (this.props.team.teamId !== teamId)
+			if (this.props.team.teamId !== this.props.myTeam)
 				return <p style={{ 'fontSize': EMOJI_SIZE*2 + 'px', 'paddingTop': EMOJI_SIZE + 'px', 'paddingBottom': EMOJI_SIZE + 'px' }}>❌</p>;
 			else {
 				return <p style={{ 'fontSize': EMOJI_SIZE*2 + 'px', 'paddingTop': EMOJI_SIZE + 'px', 'paddingBottom': EMOJI_SIZE + 'px' }}>⚽</p>;

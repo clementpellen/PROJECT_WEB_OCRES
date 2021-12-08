@@ -2,6 +2,8 @@ import React from 'react';
 import FieldReservationWidget from '../../Widgets/FieldReservationWidget.js';
 import './FieldReservationCarrousel.css';
 
+const myTeam = 1;
+
 export default class FieldReservationCarrousel extends React.Component {
 
     constructor(props) {
@@ -44,23 +46,32 @@ export default class FieldReservationCarrousel extends React.Component {
 			.catch(error => console.log(error));
 	}
 
-	changeTeam() {
-		console.log("changeTeam");
+	changeTeamAPI(hours, idTeam) {
+		
+		var data;
+		if (hours.teamId === idTeam)
+			data = {reservation: hours._id, team: 0};
+		else if (hours.teamId === 0)
+			data = {reservation: hours._id, team: idTeam};
+		else
+			return "cant-change-team";
 		
 		var myHeaders = new Headers();
-		//myHeaders.append("X-Auth-Token","f9475c7dc1df466b965ffe2a72d2f4a7");
+		myHeaders.append("Content-Type","application/json");
 
 		var obj = {
 			method: "POST",
 			headers: myHeaders,
 			mode: "cors",
-			cache: "default"
+			cache: "default",
+			body: JSON.stringify(data)
 		};
 
 		
 		fetch(`http://localhost:9000/reservations/add`, obj)
 			.then(res => res.json())
-			.then(res => this.setState({ apiResponse: res.name }));
+			.then(res => {console.log(res)})
+			.catch(error => console.log(error));
 	}
 
 	componentDidMount() {
@@ -112,13 +123,13 @@ export default class FieldReservationCarrousel extends React.Component {
 				
 				if (typeof this.state.reservations.days[reservationsIndex] !== 'undefined')
 					returnBuffer.push(
-						<div onClick={() =>this.changeTeam()} style={{ cursor: "pointer"}}>
+						<div key={i} onClick={() => this.changeTeamAPI(this.state.reservations.days[reservationsIndex].hours[i], myTeam)} style={{ cursor: "pointer"}}>
 							<FieldReservationWidget key={i}
 								emoji={this.state.emoji}
 								text={text}
 								time={i}
 								team={this.state.reservations.days[reservationsIndex].hours[i]}
-								
+								myTeam={myTeam}
 							/>
 						</div>
 					);

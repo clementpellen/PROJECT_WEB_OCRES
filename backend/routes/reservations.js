@@ -34,7 +34,19 @@ router.get('/fields/:field', (req, res) => {
 });
 
 router.post('/add', (req, res) => {
-    console.log(req)
+    
+    const id = req.body.reservation;
+    
+    if (!mongoose.Types.ObjectId.isValid(id)) 
+        return res.status(404).send('id error');
+
+    try {
+        Reservation.findByIdAndUpdate({ id }, { "teamId": req.body.team }, { new: true });
+        res.status(200).send("change");
+    } catch(err) {
+        console.log(err);
+    }
+    
 });
 
 // router.get('/fields/:field', (req, res) => {   
