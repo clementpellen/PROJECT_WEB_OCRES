@@ -59,20 +59,27 @@ export default class FieldReservationCarrousel extends React.Component {
 			}
 			for (let i = start; i < 24; i++) {
 				var text;
-				
-				// pb avec findIndex
-				for (const elem of this.state.reservations.days) {
-					console.log(elem);
+				var reservationsIndex;
+				// pb avec findIndex du coup on le fait a la mano
+				// on utilise .entries() parce que ca renvoie un tableau de paires 
+				// de propriétés [clé, valeur] énumérables de notre aray days
+				// on peut alors utiliser la clé -> l'indice i de boucle de days
+				for (const [i, elem] of this.state.reservations.days.entries()) {
+					const d1 = new Date(Date.parse(elem.day));
+					var d2 = new Date();
+					d2.setDate(d2.getDate() + this.props.day - 1);
+					if (d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate()) {
+						reservationsIndex = i
+						break;
+					}
 				}
 
 				// var reservationsIndex = this.state.reservations.days.findIndex((elem) => { 
 				// 	var d1 = Date.parse(elem.day);
 				// 	const d2 = new Date();
-				// 	console.log(elem);
-				// 	// return d1.getFullYear() === d2.getFullYear() &&
-				// 	// 	d1.getMonth() === d2.getMonth() &&
-				// 	// 	d1.getDate() === d2.getDate();
-				// 	return 1;
+				// 	return d1.getFullYear() === d2.getFullYear() &&
+				// 	d1.getMonth() === d2.getMonth() &&
+				// 	d1.getDate() === d2.getDate();
 				// });
 				
 				if(i <= 4 || i > 22)
