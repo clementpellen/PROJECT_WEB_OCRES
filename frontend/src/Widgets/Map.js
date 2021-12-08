@@ -47,9 +47,6 @@ export class MapContainer extends Component {
 			name={this.state.selectedPlace.name}
 			key={this.state.selectedPlace.position.lat + this.state.selectedPlace.position.lng}/>;
 		}
-		else {
-			return <MapFrontFrame frameIsOn={false} position={{ lat: 48.8566, lng: 2.3522 }} />;
-		}
 	};
 	
 	render() {
